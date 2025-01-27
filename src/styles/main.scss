@@ -7,9 +7,6 @@
 
 @use './blocks/Header/header';
 @use './blocks/Header/burgerButton';
-// .header,
-// main > *:not(:last-child),
-// footer
-// {
-//     display: none !important;
-// }
+
+@use './blocks/Footer/footer';
+@use './blocks/Footer/soc1als';
