@@ -1,0 +1,15 @@
+@use './normalise';
+@use './fonts';
+@use './variables';
+@use './utils';
+@use './globals';
+
+
+@use './blocks/Header/header';
+@use './blocks/Header/burgerButton';
+// .header,
+// main > *:not(:last-child),
+// footer
+// {
+//     display: none !important;
+// }
