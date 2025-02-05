@@ -5,6 +5,10 @@ html {
     overflow: hidden;
   }
 }
+#root {
+  position: relative;
+    z-index: 30;
+}
 body {
   @include fluid-text(28, 14);
   display: flex;
@@ -36,7 +40,7 @@ h6,
 
 h1,
 .h1 {
-  @include fluid-text(64, 48);
+  @include fluid-text(59, 48);
   font-weight: 600;
 }
 
@@ -78,7 +82,9 @@ h6,
   @include fluid-text(18, 16);
   font-weight: 400;
 }
-
+.h7,.h8,.h9{
+  color: var(--color-light);
+}
 a,
 button,
 label,

@@ -1,0 +1,183 @@
+import React, { useState } from "react";
+import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
+
+const checkingClasses = () => {
+
+}
+const getTabIndex = (bool) => {
+  return (bool) ? -1 : 0;
+}
+let Skills = () => {
+  let [stateClassesHard, setStateClassesHard] = useState("is-active");
+  let [stateClassesSoft, setStateClassesSoft] = useState("");
+  const handleKey = event => {
+    console.log(event.target.parentElement.children);
+    if(event.key === "ArrowDown") console.log(event.target.nextSibling);  
+    if(event.key === "ArrowUp")  console.log(event.target.previousSibling);  
+  };
+
+  return (
+    <section
+      className="skills section"
+      aria-labelledby="skills-title"
+      id="Skills"
+    >
+      <header className="skills__header">
+        <div className="skills__header-inner container">
+          <div className="skills__header-body">
+            <h2 className="skills__title" id="skills-title">
+              Skills
+              <svg
+              width="669"
+              height="367"
+              viewBox="0 0 669 367"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="skills-lights"
+              aria-hidden="true"
+            >
+              <g filter="url(#filter0_f_30401_1502)">
+                <path
+                  d="M367.984 125.931C478.418 125.931 559 85.6672 559 133.161C559 180.655 269.516 257 159.082 257C48.6476 257 159.082 180.655 159.082 133.161C159.082 85.6672 257.549 125.931 367.984 125.931Z"
+                  fill="url(#paint0_linear_30401_1502)"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_f_30401_1502"
+                  x="0"
+                  y="0"
+                  width="669"
+                  height="367"
+                  filterUnits="userSpaceOnUse"
+                  colorInterpolationFilters="sRGB"
+                >
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="BackgroundImageFix"
+                    result="shape"
+                  />
+                  <feGaussianBlur
+                    stdDeviation="55"
+                    result="effect1_foregroundBlur_30401_1502"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_30401_1502"
+                  x1="134.662"
+                  y1="257"
+                  x2="142.122"
+                  y2="105.241"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#1CC4F9" />
+                  <stop offset="1" stopColor="#FE69FE" />
+                </linearGradient>
+              </defs>
+            </svg>
+            </h2>
+           
+          </div>
+        </div>
+      </header>
+      <div className="skills__body container">
+        <div className="skills__body tabs">
+          <header className="tabs__header">
+            <h3>Skills</h3>
+            <div
+              className="tabs__buttons container"
+              role="tablist"
+              aria-labelledby="skills-title"
+              onKeyDown={handleKey}
+            >
+              <button
+                className="tabs__button link"
+                type="button"
+                id="tab-1"
+                role="tab"
+                aria-controls="tabpanel-1"
+                aria-selected= "false"
+                tabIndex={getTabIndex(stateClassesSoft === "is-active")}
+                onClick={() => {
+                  if (stateClassesSoft) {
+                    setStateClassesSoft("");
+                    setStateClassesHard("is-active");
+                  }
+                }}
+              >
+                Hard skills
+              </button>
+              <button
+                className="tabs__button link"
+                type="button"
+                id="tab-2"
+                role=""
+                aria-controls="tabpanel-2"
+                aria-selected= "true"
+                tabIndex={getTabIndex(stateClassesHard === "is-active")}
+                onClick={() => {
+                  if (stateClassesHard) {
+                    setStateClassesHard("");
+                    setStateClassesSoft("is-active");
+                  }
+                }}
+              >
+                Soft skills
+              </button>
+            </div>
+          </header>
+          <div className="tabs__body">
+            <div
+              className={`tabs__content ${stateClassesHard}`}
+              id="tabpanel-1"
+              aria-labelledby="tab-1"
+              tabIndex={getTabIndex(stateClassesSoft === "is-active")}
+            >
+              <ul className="list">
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" >HTML (HTML5), JSX </FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.3}>CSS (CSS3), SASS (SCSS), Bootstrap,</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.4}>JavaScript (ES6+, OOP)</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.5}>React</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.6}>Redux (Redux Toolkit)</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.7}>Formik, Yup, Axios, React Router</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.8}>REST API</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.9}>Git (GitHub, Github Pages)</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.95}>Figma, Adobe Photoshop</FadeInAnimation>
+             <FadeInAnimation  className="list__item" direction="left" wrapperElement ="li" delay={2.99}>English level - B1</FadeInAnimation>
+              </ul>
+            </div>
+            <div
+              className={`tabs__content ${stateClassesSoft}`}
+              id="tabpanel-2"
+              aria-labelledby="tab-2"
+              tabIndex={getTabIndex(stateClassesHard === "is-active")}
+            >
+              <ul className="list">
+                <li className="list__item without">I am responsible about deadlines</li>
+                <li className="list__item without">
+                  I am attentive to the details of the terms of reference
+                </li>
+                <li className="list__item without">
+                  I am demanding of the quality of my code, I follow the
+                  code-style
+                </li>
+                <li className="list__item without">
+                  I welcome constructive criticism and am always happy to find
+                  new points of professional and personal growth
+                </li>
+                <li className="list__item without">
+                  I am motivated to improve my skills, constantly studying new
+                  technologies in my field of activity
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;

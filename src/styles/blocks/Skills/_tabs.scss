@@ -1,0 +1,41 @@
+@use "../../helpers/" as *;
+
+
+.tabs {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__button {
+       
+        background-color: transparent;
+        color: var(--color-light);
+        &:last-child {
+            margin-left: rem(24);
+        }
+    }
+
+    &__body {
+
+        @include tablet{
+            margin-inline: rem(125);
+        }
+        @include mobile{
+            margin-inline: rem(0);
+        }
+    }
+
+    &__content {
+        display: none;
+        margin-top: rem(35);
+        @include mobile{
+            margin-top: rem(32);
+        }
+        &.is-active{
+            display: block;
+        }
+    }
+    
+}

@@ -4,7 +4,7 @@ import { SiVk } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id='Contacts'>
       <div className='footer__inner container'>
         <div className='footer__body'>
           <div className='footer__title h3'>
@@ -42,10 +42,11 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer__extra'>
-          <div className='footer__extra-menu'>
-            <a href="/" class="footer__extra-menu-link">
-            © Copyright 2024, All  Rights  Not Reserved</a>
+          <div className='footer__copyright'>
+            © Copyright 2025, All  Rights  Not Reserved
           </div>
+          </div>
+          <div className='footer__clipPathGroup clipPathGroup'>
           </div>
       </div>
     </footer>

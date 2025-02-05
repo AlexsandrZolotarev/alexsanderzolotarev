@@ -10,3 +10,17 @@
 
 @use './blocks/Footer/footer';
 @use './blocks/Footer/soc1als';
+
+@use './blocks/Hero/hero';
+@use './blocks/Hero/chooseUS';
+
+@use './blocks/section';
+@use './blocks/grid';
+@use './blocks/clipPathGroup';
+@use './blocks/lights';
+
+@use './blocks/Skills/skills';
+@use './blocks/Skills/tabs';
+@use './blocks/Skills/list';
+@use './blocks/Loader/loader';
+
