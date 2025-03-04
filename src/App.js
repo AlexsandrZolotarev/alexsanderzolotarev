@@ -1,8 +1,8 @@
-import Banner from "./Banner/Banner";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import Loader from "./Loader/loader";
+import Portfolio from "./Portfolio/Portfolio";
 import Skills from "./Skills/Skills";
 import "./styles/main.scss";
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <main>
         <Hero/>
         <Skills/>
-        <Banner/>
+        <Portfolio/>
       </main>
       <Footer/>
       <Loader/>

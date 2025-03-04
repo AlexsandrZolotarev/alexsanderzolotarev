@@ -7,9 +7,10 @@
         flex-direction: column;
         align-items: center;
     }
-
+    &__buttons{
+        margin-top: rem(80);
+    }
     &__button {
-       
         background-color: transparent;
         color: var(--color-light);
         &:last-child {

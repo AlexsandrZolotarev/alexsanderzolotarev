@@ -43,7 +43,7 @@ const Hero = () => {
             </div>
           </FadeInAnimation>
           <FadeInAnimation direction="up" className="hero__chooseUS chooseUS">
-            <ul className="chooseUS-list">
+            <ul className="chooseUS-list baseline">
               <li className="chooseUS-item">
                 <div className="chooseUS-card">
                   <IoBody className="chooseUS-card__icon"/>

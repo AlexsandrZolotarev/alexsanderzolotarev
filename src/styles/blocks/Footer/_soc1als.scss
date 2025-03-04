@@ -18,18 +18,7 @@
     display: flex;
     padding: rem(20);
     position: relative;
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50px; 
-        padding: 2px; 
-        background:linear-gradient(45deg,#0cbaf1 0%, #e95ce9 100%); 
-        mask: 
-          linear-gradient(#000 0 0) content-box, 
-          linear-gradient(#000 0 0);
-        mask-composite: exclude; 
-    }
+    @include circleOutline;
     @include tablet{
         font-size: rem(25);
     }

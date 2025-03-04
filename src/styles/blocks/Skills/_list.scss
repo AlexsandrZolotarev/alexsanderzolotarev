@@ -1,16 +1,9 @@
 @use "../../helpers/" as *;
 .list {
   &__item {
-    background-color: var(--color-black-50);
     margin-block: rem(24);
     padding: rem(24);
-    border: var(--border);
-    border-image: linear-gradient(
-        to left,
-        rgba(176, 176, 178, 0) 0%,
-        rgba(176, 176, 178, 1) 100%
-      )
-      1;
+   
     &:not(.without):nth-child(odd)
     {
       opacity: 0;  

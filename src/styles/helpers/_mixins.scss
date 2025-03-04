@@ -14,7 +14,20 @@
   opacity: 1;
   visibility: visible;
 }
-
+@mixin circleOutline{
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px; 
+    padding: 2px; 
+    background:linear-gradient(45deg,#0cbaf1 0%, #e95ce9 100%); 
+    mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude; 
+}
+}
 @mixin flex-center($isInline: false) {
   @if $isInline {
     display: inline-flex;
@@ -62,24 +75,3 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
-
-// @mixin full-vw-centered-line(
-//   $property: top,
-//   $left: 50%,
-//   $right: auto,
-//   $translate: -50%
-// ) {
-//   position: relative;
-
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     left: $left;
-//     right: $right;
-//     #{$property}: 0;
-//     translate: $translate;
-//     width: 100vw;
-//     height: rem(1);
-//     background-color: var(--color-dark-15);
-//   }
-// }

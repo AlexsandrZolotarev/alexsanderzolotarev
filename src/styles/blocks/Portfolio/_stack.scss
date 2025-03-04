@@ -1,0 +1,27 @@
+@use "../../helpers/" as *;
+
+
+.stack{
+    &__list{
+        display: flex;
+        margin-top: rem(34);
+        @include mobile{
+            justify-content: center;
+        }
+    }
+    &__item
+    {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: rem(18);
+        margin-right: rem(15); 
+        @include circleOutline;
+        @include mobile{
+            padding: rem(13);
+        }
+    }
+    &__image{
+       
+    }
+}

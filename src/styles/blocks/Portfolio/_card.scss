@@ -1,0 +1,44 @@
+@use "../../helpers/" as *;
+
+.card {
+  display: grid;
+  gap: 20px max(40px, 10%);
+  grid-template-columns: 35% auto;
+  padding: rem(40);
+  overflow: hidden;
+  @include mobile {
+    padding: rem(25);
+  }
+ 
+  @include mobile {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  &__image {
+    cursor: pointer;
+    border-radius: rem(12);
+    height: rem(320);
+    &:hover{
+      transition: all 0.8s;
+      transform: scale(1.05);
+    }
+  }
+  &__body {
+    @include mobile{
+     margin-top: rem(20);
+  }
+  }
+  &__date {
+    background-color: var(--color-gray-3);
+    color: white;
+    padding: rem(10) rem(20);
+    border-radius: rem(30);
+  }
+  &__title {
+    margin-top: rem(10);
+  }
+  &__link {
+  }
+  &__description {
+  }
+}
