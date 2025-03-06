@@ -74,14 +74,10 @@
   &__content {
     display: flex;
     justify-content: center;
-    width: clamp(60vw,70vw,88vw);
     img{
+      cursor: zoom-in;
       height: clamp(80vh,85vh,88vh);
     }
-    @include mobile{
-      width: 95vw;
-    }
-  
   }
   &__caption {
     word-wrap: anywhere;

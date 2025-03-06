@@ -26,6 +26,12 @@ const addEventHandlers = (fancybox) => {
     if(event.key === "Escape") deleteFancyBox();
   });
 }
+
+const addEventHandlersVieport = (vieport) => {
+  vieport.addEventListener("click", event => {
+   if(event.target.className === "fancybox__viewport") deleteFancyBox();
+  });
+}
 const FancyBox = (caption) => {
   let fancybox = document.createElement("div");
       fancybox.className = "fancybox";
@@ -51,6 +57,8 @@ const FancyBox = (caption) => {
 
   let fancybox__viewport = document.createElement("div");
       fancybox__viewport.className = "fancybox__viewport";
+
+      addEventHandlersVieport(fancybox__viewport);
 
   let fancybox__content = document.createElement("div");
       fancybox__content.className = "fancybox__content";
