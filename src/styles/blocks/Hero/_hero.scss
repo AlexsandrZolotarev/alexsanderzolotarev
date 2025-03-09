@@ -2,7 +2,7 @@
 
 .hero {
   transition: all 2s ease;
- 
+
   &__clipPathGroup {
     position: absolute;
     top: 0%;
@@ -18,12 +18,15 @@
     }
   }
   &__body {
-    @include tablet-above {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-areas:
-        "title avatar"
-        "chooseUS chooseUS";
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "title avatar"
+      "laptop avatar"
+      "chooseUS chooseUS";
+    @include mobile {
+      display: flex;
+      flex-direction: column;
     }
   }
   &__chooseUS {
@@ -31,15 +34,15 @@
     grid-column: -1/1;
     transform: translate(0px, 200px);
   }
+  &__laptop {
+    grid-area: laptop;
+    transform: translate(-200px, 0);
 
+  }
   &__title {
     grid-area: title;
-    padding-top: rem(87);
     transform: translate(0px, 200px);
     opacity: 0;
-    @include tablet {
-      padding-top: rem(47);
-    }
     * {
       margin: 0;
     }
@@ -53,11 +56,11 @@
     transform: translate(200px, 0px);
     opacity: 0;
     &-image {
-      z-index: 46;
-    }
-    &-background * {
-    
+      position: relative;
+      transform: scaleX(-1);
+      transform-origin: center;
+      transform-box: fill-box;
+      z-index: 47;
     }
   }
- 
 }

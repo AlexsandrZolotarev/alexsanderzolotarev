@@ -29,11 +29,13 @@ const FadeInAnimation = ({
       fadeDirection = { x: 0 };
   }
   useEffect(() => {
-    gsap.to(compRef.current, 1, {
-      ...fadeDirection,
-      opacity: 1,
-      delay
-    });
+    window.addEventListener("load", () => {
+      gsap.to(compRef.current, 1, {
+        ...fadeDirection,
+        opacity: 1,
+        delay,
+      });
+    }); 
   }, [compRef, fadeDirection, delay]);
   return (
     <Component ref={compRef} {...props}>

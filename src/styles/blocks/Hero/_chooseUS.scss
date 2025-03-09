@@ -3,9 +3,6 @@
 .chooseUS {
   --column: 3;
   opacity: 0;
-  @include mobile {
-    padding: rem(36) rem(15);
-  }
   &-list {
     display: grid;
     grid-template-columns: auto auto auto;

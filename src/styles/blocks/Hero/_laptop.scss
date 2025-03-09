@@ -1,0 +1,103 @@
+@use "../../helpers/" as *;
+
+
+.laptop {
+  position: relative;
+  &__container
+  {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(82,42,115,1) 0%, rgba(152,166,254,1) 100%);;
+    width: 200px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) skew(-62deg, 36deg);
+    border:  5px 5px 5px 5px #11045A solid;
+    border-radius: 3px;
+
+  }
+
+  &__keyboard{
+    position: absolute;
+    height: 4px;
+    width: 150px;
+    left: 50%;
+    transform: translatex(-50%);
+    top: 20px;
+    background: #19096c;
+    box-shadow: 0 6px #19096c, 0 12px #19096c, 0 18px #19096c, 0 -5px 0 -1px #19096c;
+  }
+  &__touchpad{
+    position: absolute;
+    background: #A6B9E1;
+    height: 24px;
+    width: 60px;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: 4px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid #19096C;
+    border-top: 1px solid #19096C;
+    border-bottom: 1px solid #19096C;
+    cursor: pointer;
+  }
+  &__screen {
+    position: absolute;
+    background: linear-gradient(to bottom left, #4015C7, #CA6DA2);
+    background: #212974;
+    width: 200px;
+    height: 198px;
+    transform-origin: top;
+    top: 0;
+    transform: skew(58deg, 0deg) rotatex(116deg);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 3px 3px 0 #10054d;
+    &::before {
+      position: absolute;
+      content: "";
+      background: #2C37A0;
+      width: 186px;
+      height: 182px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    &::after {
+      position: absolute;
+      content: "";
+      font-size: 26px;
+      background: #56169D;
+      color: white;
+      width: 100px;
+      height: 80px;
+      left: 45%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      place-items: center;
+      box-shadow: 20px 20px 0 #11045A;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+    }
+    &-code {
+      position: absolute;
+      height: 6px;
+      width: 16px;
+      background: #F7359E;
+      top: 110px;
+      left: 52px;
+      z-index: 100;
+      box-shadow: 20px 0 0 white, 40px 0 white, 60px 0 0 -1px #E69661, 0 -8px white, 10px -16px #E79858, 28px -16px #FA339A, 10px -24px white, 28px -24px #E79858, 10px -32px #FA339A, 28px -32px white, 0 -40px white, 0 -48px #F7359E, 20px -48px white, 40px -48px white, 60px -48px 0 -1px #E69661;
+    }
+    
+  }
+}
+
+
+
+
+

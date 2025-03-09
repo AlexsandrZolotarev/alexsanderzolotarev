@@ -1,6 +1,5 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
-
 const FancyBox = () => {
   return (
     <div
@@ -19,9 +18,8 @@ const FancyBox = () => {
         </button>
       </div>
       <div className="fancybox__viewport">
-      <div className="fancybox__content">
-        
-        </div>
+      <div className="fancybox__content"> 
+          </div>
         <div className="fancybox__caption">
         
       </div>

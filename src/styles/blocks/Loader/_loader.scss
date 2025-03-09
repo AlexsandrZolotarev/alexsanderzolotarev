@@ -14,22 +14,27 @@
   transition: 2s all;
   opacity: 1;
   visibility: visible;
+
   &__part{
     background-color: var(--color-purple-10);
     animation: right-movement;
     animation-iteration-count: 1;
     animation-timing-function:ease;
+    transform: translateX(100%);
+    transition-delay: var(--delay);
+    transition-duration: .9s;
+    will-change: transform;
     &:first-child {
-      --delay: 2s;
+      --delay: 1.5s;
       animation-duration: var(--delay);
     }
     &:nth-child(2)
     {
-      --delay: 3s;
+      --delay: 2.1s;
       animation-duration: var(--delay);
     }
     &:last-child {
-      --delay: 3.30s;
+      --delay: 2.3s;
       animation-duration: var(--delay);
     }
   }
