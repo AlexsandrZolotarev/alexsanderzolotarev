@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/alexsanderzolotarev/static/css/main.fbd3eb54.css",
-    "main.js": "/alexsanderzolotarev/static/js/main.d24defa6.js",
-    "static/media/Kuznec12_big.png": "/alexsanderzolotarev/static/media/Kuznec12_big.474089563154dc278d6f.png",
+    "main.css": "/alexsanderzolotarev/static/css/main.5bc5005f.css",
+    "main.js": "/alexsanderzolotarev/static/js/main.15d1dfe2.js",
+    "static/media/Kuznec12_big.webp": "/alexsanderzolotarev/static/media/Kuznec12_big.d5eaed63a9873717922e.webp",
     "static/media/futuretech_big.png": "/alexsanderzolotarev/static/media/futuretech_big.bdd2921af85d84176206.png",
     "static/media/RivoAgancy_big.png": "/alexsanderzolotarev/static/media/RivoAgancy_big.81ab9d2b53e2bf98d7d6.png",
-    "static/media/Kuznec12.png": "/alexsanderzolotarev/static/media/Kuznec12.8f59fbffb05010331162.png",
-    "static/media/RivoAgancy.png": "/alexsanderzolotarev/static/media/RivoAgancy.5793a1365c4e71e0f94a.png",
-    "static/media/futuretech.png": "/alexsanderzolotarev/static/media/futuretech.8f0608cd5dbe5d9bd470.png",
-    "static/media/image33.png": "/alexsanderzolotarev/static/media/image33.cb6acd81d00cb0786011.png",
-    "static/media/Avatar.png": "/alexsanderzolotarev/static/media/Avatar.e4af885ce2a4f793da82.png",
-    "static/media/ClipPathGroupMain.png": "/alexsanderzolotarev/static/media/ClipPathGroupMain.2ea034d937295ed14dca.png",
+    "static/media/Kuznec12.webp": "/alexsanderzolotarev/static/media/Kuznec12.7cf2e0c8260f80c7e338.webp",
+    "static/media/RivoAgancy.webp": "/alexsanderzolotarev/static/media/RivoAgancy.6894c7d4991fc89ff718.webp",
+    "static/media/image33.webp": "/alexsanderzolotarev/static/media/image33.a0cc17f4241dd0ef6f8d.webp",
+    "static/media/Avatar.webp": "/alexsanderzolotarev/static/media/Avatar.1c18982fd5fbc4b530d5.webp",
+    "static/media/futuretech.webp": "/alexsanderzolotarev/static/media/futuretech.1189682d479a70b5c84b.webp",
+    "static/media/ClipPathGroupMain.webp": "/alexsanderzolotarev/static/media/ClipPathGroupMain.0079038fa5e8e6472979.webp",
     "static/media/ChakraPetch-SemiBold.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-SemiBold.3e9fd31ed73ac19b24e6.woff2",
     "static/media/ChakraPetch-Medium.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-Medium.23d07967400066357341.woff2",
     "static/media/ChakraPetch-Light.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-Light.a388ae6a475d001ec2e4.woff2",
@@ -27,11 +27,11 @@
     "static/media/javascript.svg": "/alexsanderzolotarev/static/media/javascript.92d0805d66beacbd00dca44bc5e4f718.svg",
     "index.html": "/alexsanderzolotarev/index.html",
     "static/media/css.svg": "/alexsanderzolotarev/static/media/css.c56383af0fc7fa213642ae1fc5fa4b29.svg",
-    "main.fbd3eb54.css.map": "/alexsanderzolotarev/static/css/main.fbd3eb54.css.map",
-    "main.d24defa6.js.map": "/alexsanderzolotarev/static/js/main.d24defa6.js.map"
+    "main.5bc5005f.css.map": "/alexsanderzolotarev/static/css/main.5bc5005f.css.map",
+    "main.15d1dfe2.js.map": "/alexsanderzolotarev/static/js/main.15d1dfe2.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbd3eb54.css",
-    "static/js/main.d24defa6.js"
+    "static/css/main.5bc5005f.css",
+    "static/js/main.15d1dfe2.js"
   ]
 }
