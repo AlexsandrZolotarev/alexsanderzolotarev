@@ -6,13 +6,14 @@
   &-list {
     display: grid;
     grid-template-columns: auto auto auto;
+    gap: rem(50);
     padding: rem(42) rem(63) rem(53);
     @include tablet {
       grid-template-columns: auto auto;
     }
     @include mobile {
       grid-template-columns: auto;
-      padding: rem(42) rem(0) rem(0);
+      padding: rem(35);
       justify-items: center;
     }
   }
@@ -26,18 +27,9 @@
     }
   }
   &-card {
-    @include tablet {
-      margin-bottom: rem(50);
-    }
-    @include mobile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: rem(20);
-    }
     &__icon {
       font-size: rem(60);
-      margin-bottom: rem(15);
+      margin-bottom: rem(42);
       @include hover {
         color: var(--color-purple-10);
         transition-duration: var(--transition-duration);
@@ -48,7 +40,7 @@
     }
     &__description {
       text-wrap: balance;
-      font-size: rem(16);
+      font-size: rem(18);
       line-height: 200%;
       span{
         font-weight: 700;
@@ -56,7 +48,6 @@
       }
       @include mobile {
         text-wrap: pretty;
-        text-align: center;
       }
     }
   }

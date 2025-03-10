@@ -9,18 +9,23 @@
   @include mobile {
     padding: rem(25);
   }
- 
+
   @include mobile {
     grid-template-columns: 1fr;
     justify-items: center;
   }
   &__image {
-    cursor: pointer;
-    border-radius: rem(12);
-    height: rem(320);
+    &-wrapper{
+      overflow: hidden;
+      border-radius: rem(12);
+      cursor: pointer;
+      height: rem(320);
+    }
+    
+   
+    transition: scale 500ms;
     &:hover{
-      transition: all 0.8s;
-      transform: scale(1.05);
+      scale: 105%;
     }
   }
   &__body {

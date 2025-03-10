@@ -8,18 +8,22 @@
         align-items: center;
     }
     &__buttons{
+        display: flex;
+        text-wrap: nowrap;
         margin-top: rem(80);
     }
     &__button {
         background-color: transparent;
         color: var(--color-light);
+        padding: rem(10);
+        font-size: rem(20);
         &:last-child {
             margin-left: rem(24);
         }
     }
 
     &__body {
-
+        font-size: rem(18);
         @include tablet{
             margin-inline: rem(125);
         }

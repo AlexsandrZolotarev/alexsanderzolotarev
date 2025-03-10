@@ -7,7 +7,7 @@
     z-index: -1;
     @include abs-center;
     @include mobile {
-      width: rem(400);
+      width: rem(310);
     }
   }
   &-body {

@@ -73,6 +73,7 @@ const FancyBox = (caption) => {
       : caption === "Rivo Agency"
       ? RivoAgency
       : kuznec;
+  image.loading = "lazy";
   fancybox__content.append(image);
 
   addEventHandlersMousemove(image);
