@@ -12,6 +12,7 @@
   animation-timeline: scroll();
   animation-range: rem(100) rem(100);
   transition: 0.2s;
+
   @keyframes scroling-header {
     to {
       background-color: var(--color-black-100);

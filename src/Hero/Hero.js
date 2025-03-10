@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../images/Hero/Avatar.png";
+import avatar from "../images/Hero/Avatar.webp";
 import { IoBody } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { MdRateReview } from "react-icons/md";

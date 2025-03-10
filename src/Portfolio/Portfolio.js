@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import kuznec_small from "../images/Portfolio/Kuznec12.png";
-import RivoAgency_small from "../images/Portfolio/RivoAgancy.png";
-import futuretech_small from "../images/Portfolio/futuretech.png";
-import kuznec from "../images/Portfolio/Kuznec12_big.png";
-import RivoAgency from "../images/Portfolio/RivoAgancy_big.png";
-import futuretech from "../images/Portfolio/futuretech_big.png";
+import React from "react";
+import kuznec_small from "../images/Portfolio/Kuznec12.webp";
+import RivoAgency_small from "../images/Portfolio/RivoAgancy.webp";
+import futuretech_small from "../images/Portfolio/futuretech.webp";
 import Html_icon from "../icons/stack/html.svg";
 import Js_icon from "../icons/stack/javascript.svg";
 import Php_icon from "../icons/stack/php.svg";

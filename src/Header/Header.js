@@ -36,9 +36,6 @@ const Header = () => {
                 <li className="header__menu-item">
                   <a href="#Portfolio" className="header__menu-link" onClick={() => {!isActive || isActiveOnChange()}}>Portfolio</a>
                 </li>
-                {/* <li className="header__menu-item">
-                  <a href="/" className="header__menu-link" onClick={() => {!isActive || isActiveOnChange()}}>Work Experience</a>
-                </li> */}
               </ul>
             </nav>
             <a href="#Contacts" className="header__contact-us-link link">Contacts</a>

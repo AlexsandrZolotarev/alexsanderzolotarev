@@ -1,4 +1,4 @@
-import kuznec from "../images/Portfolio/Kuznec12_big.png";
+import kuznec from "../images/Portfolio/Kuznec12_big.webp";
 import RivoAgency from "../images/Portfolio/RivoAgancy_big.png";
 import futuretech from "../images/Portfolio/futuretech_big.png";
 
