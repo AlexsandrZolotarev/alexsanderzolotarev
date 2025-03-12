@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
 
 const checkingClasses = () => {};
 const getTabIndex = (bool) => {
@@ -9,38 +8,32 @@ const getTabIndex = (bool) => {
 let Skills = () => {
   let [stateClassesHard, setStateClassesHard] = useState("is-active");
   let [stateClassesSoft, setStateClassesSoft] = useState("");
-  let updateUISoft = () =>{
+  let updateUISoft = () => {
     setStateClassesSoft("is-active");
     setStateClassesHard("");
-  }
-  let updateUIHard = () =>{
+  };
+  let updateUIHard = () => {
     setStateClassesSoft("");
     setStateClassesHard("is-active");
-  }
+  };
   const handleKey = (event) => {
     if (event.key === "ArrowDown" || event.key === "ArrowLeft") {
-      if(event.target === event.target.parentElement.children[0])
-      {
+      if (event.target === event.target.parentElement.children[0]) {
         updateUISoft();
         event.target.parentElement.children[1].focus();
-      }
-      else
-      {
+      } else {
         updateUIHard();
         event.target.parentElement.children[0].focus();
       }
     }
     if (event.key === "ArrowUp" || event.key === "ArrowRight") {
-      if(event.target === event.target.parentElement.children[1])
-        {
-          updateUIHard();
-          event.target.parentElement.children[0].focus();
-        }
-        else
-        {
-          updateUISoft();
-          event.target.parentElement.children[1].focus();
-        }
+      if (event.target === event.target.parentElement.children[1]) {
+        updateUIHard();
+        event.target.parentElement.children[0].focus();
+      } else {
+        updateUISoft();
+        event.target.parentElement.children[1].focus();
+      }
     }
   };
 
@@ -51,7 +44,7 @@ let Skills = () => {
       id="Skills"
     >
       <header className="title">
-      <div className="title-inner container">
+        <div className="title-inner container">
           <div className="title-body">
             <h2 className="title-title" id="skills-title">
               Skills
@@ -163,85 +156,28 @@ let Skills = () => {
               tabIndex={getTabIndex(stateClassesSoft === "is-active")}
             >
               <ul className="list">
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                >
-                  HTML (HTML5), JSX{" "}
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.3}
-                >
+                <div className="list__item baseline">HTML (HTML5), JSX </div>
+                <div className="list__item baseline">
                   CSS (CSS3), SASS (SCSS), Bootstrap,
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.4}
-                >
+                </div>
+                <div className="list__item baseline">
                   JavaScript (ES6+, OOP)
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.5}
-                >
-                  React
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.6}
-                >
-                  Redux (Redux Toolkit)
-                </FadeInAnimation>
-                <FadeInAnimation 
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.7}
-                >
+                </div>
+                <div className="list__item baseline">React</div>
+                <div className="list__item baseline">Redux (Redux Toolkit)</div>
+                <div className="list__item baseline">
                   Formik, Yup, Axios, React Router
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.8}
-                >
-                  REST API
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.9}
-                >
+                </div>
+                <div className="list__item baseline">REST API</div>
+                <div className="list__item baseline">
                   Git (GitHub, Github Pages)
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.95}
-                >
+                </div>
+                <div className="list__item baseline" >
                   Figma, Adobe Photoshop, Microsoft Excel
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.99}
-                >
+                </div>
+                <div className="list__item baseline" >
                   English level - B1
-                </FadeInAnimation>
+                </div>
               </ul>
             </div>
             <div

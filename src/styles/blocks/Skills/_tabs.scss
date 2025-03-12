@@ -2,6 +2,7 @@
 
 
 .tabs {
+    font-size: fluid(23,18);
     &__header {
         display: flex;
         flex-direction: column;
@@ -21,9 +22,8 @@
             margin-left: rem(24);
         }
     }
-
     &__body {
-        font-size: rem(18);
+      
         @include tablet{
             margin-inline: rem(125);
         }
