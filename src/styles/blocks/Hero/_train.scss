@@ -1,51 +1,48 @@
 @use "../../helpers/" as *;
 
 .train {
-  position: relative;
-  animation: move-train 25s linear infinite;
   display: none;
+  position: relative;
+  opacity: 1;
+  //animation: appearance 3s 5s forwards, move-train 25s 5s linear infinite;
   .train-wrapper {
-    position: absolute;
-    bottom: -5%;
-    right: -25%;
+    position: relative;
+
     z-index: 1;
   }
   &__engine {
-    &-body{
-        display: inline-flex;
-        animation: body-upDown 0.3s 0.1s infinite;
+    &-body {
+      display: inline-flex;
+      animation: body-upDown 0.3s 0.1s infinite;
+      position: absolute;
+      bottom: 1.4rem;
+      height: 5rem;
+      left: 0;
+      width: 13rem;
+      background: linear-gradient(90deg, #3d065f, #5f27bd);
+      border: rem(5) solid #2c1458;
+      border-radius: 20rem 1.1rem 1.1rem;
+      &::after {
+        content: "";
+        left: 50%;
         position: absolute;
-        bottom: 1.4rem;
-        height: 5rem;
-        left: 0;
-        width: 13rem;
-        background: linear-gradient(90deg, #3d065f, #5f27bd);
-        border: rem(5) solid #2c1458;
+        transform: translate(-50%, 0);
+        background: rgb(0, 0, 0);
         border-radius: 20rem 1.1rem 1.1rem;
-        &::after {
-          content: "";
-          left: 50%;
-          position: absolute;
-          transform: translate(-50%, 0);
-          background: rgb(0, 0, 0);
-          border-radius: 20rem 1.1rem 1.1rem;
-          height: 40%;
-          top: 1rem;
-          left: 25%;
-          width: 25%;
-        }
+        height: 40%;
+        top: 1rem;
+        left: 25%;
+        width: 25%;
+      }
     }
-    &-logo{
-        position: absolute;
-        top: 0.9rem;
-        right: 0.3rem;
-        font-size: rem(20);
-        text-transform: uppercase;
-        font-weight: 800;
-      
-       
+    &-logo {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.3rem;
+      font-size: rem(20);
+      text-transform: uppercase;
+      font-weight: 800;
     }
-   
   }
   &__compartment {
     animation: body-upDown 0.3s infinite;
@@ -53,10 +50,11 @@
     bottom: 1.4rem;
     height: 5rem;
     left: 13.5rem;
-    width: 15rem;
+    width: 14.5rem;
     background: linear-gradient(90deg, #3d065f, #5f27bd);
     border: rem(5) solid #2c1458;
     border-radius: rem(10);
+
     &-windows {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -82,13 +80,9 @@
       }
     }
     &-two {
-      animation: body-upDown 0.3s 0.1s infinite;
-      left: 29rem;
-      .compartment-window {
-        &::before {
-          animation: up-down 0.3s 0.3s infinite;
-        }
-      }
+      opacity: 0;
+      left: 28.5rem;
+      animation: appearance 40s infinite, body-upDown 0.3s 0.1s infinite;
     }
   }
   &__wheel-joint {
@@ -137,7 +131,14 @@
       }
     }
   }
-
+  @keyframes appearance {
+    0%{
+      opacity: 0; /* Элемент не виден */
+  }
+  100% {
+      opacity: 1; /* Элемент не виден */
+  }
+  }
   @keyframes up-down {
     0%,
     100% {
@@ -154,7 +155,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-200%);
+      transform: translateX(-300%);
     }
   }
 

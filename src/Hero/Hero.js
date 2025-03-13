@@ -5,11 +5,9 @@ import { RiTeamFill } from "react-icons/ri";
 import { MdRateReview } from "react-icons/md";
 import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { SiBilibili, SiRedux } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
 import { DiCss3 } from "react-icons/di";
 import { FaNode, FaNodeJs, FaReact } from "react-icons/fa";
-import { addTrain } from "./train";
-addTrain();
 const Hero = () => {
   const laptopKeyboardButtons = new Array(42);
   laptopKeyboardButtons.fill(0);
@@ -21,33 +19,15 @@ const Hero = () => {
           aria-hidden="true"
         ></div>
         <div className="hero__body">
-          <div className="hero__title">
+          <FadeInAnimation className="hero__title" direction="down">
             <h1 id="hero-title">Hello! My name is Aleksander Zolotarev.</h1>
-          </div>
-          {/* <FadeInAnimation className="hero__title" direction="down">
-            <h1 id="hero-title">Hello! My name is Aleksander Zolotarev.</h1>
-          </FadeInAnimation> */}
+          </FadeInAnimation>
 
-          {/* <FadeInAnimation direction="right" className="hero__laptop laptop">
-            <div className="laptop__container">
-              <div className="laptop__body">
-                <div className="laptop__touchpad"></div>
-                <div className="laptop__keyboard"></div>
-                <div className="laptop__screen">
-                  <div className="laptop__screen-code"></div>
-                </div>
-              </div>
-            </div>
-          </FadeInAnimation> */}
           <div className="hero__train train" aria-hidden="true">
             <div className="train-wrapper">
-              <div className="train__engine-front">
-
-              </div>
               <div className="train__engine-body">
                 <div className="train__engine-logo">Zolotarev</div>
               </div>
-
               <div className="train__compartment">
                 <div className="train__compartment-windows">
                   <div className="window">
@@ -62,7 +42,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="train__compartment train__compartment-two">
+              {/* <div className="train__compartment train__compartment-two">
                 <div className="train__compartment-windows">
                   <div className="window">
                   <FaReact />
@@ -74,11 +54,11 @@ const Hero = () => {
                   <FaNode />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>
-          <div className="hero__avatar">
+           <FadeInAnimation direction="left" className="hero__avatar">
             <img
               alt="Красивый молодой парень"
               className="hero__avatar-image"
@@ -90,21 +70,8 @@ const Hero = () => {
               className="hero__avatar-background lights"
               aria-hidden="true"
             ></div>
-          </div>
-          {/* <FadeInAnimation direction="left" className="hero__avatar">
-            <img
-              alt="Красивый молодой парень"
-              className="hero__avatar-image"
-              src={avatar}
-              width={525}
-              height={626}
-            ></img>
-            <div
-              className="hero__avatar-background lights"
-              aria-hidden="true"
-            ></div>
-          </FadeInAnimation> */}
-          <div className="hero__chooseUS chooseUS">
+          </FadeInAnimation>
+          {/* <div className="hero__chooseUS chooseUS">
             <ul className="chooseUS-list baseline">
               <li className="chooseUS-item">
                 <div className="chooseUS-card">
@@ -142,8 +109,8 @@ const Hero = () => {
                 </div>
               </li>
             </ul>
-          </div>
-          {/* <FadeInAnimation direction="up" className="hero__chooseUS chooseUS">
+          </div> */}
+          <FadeInAnimation direction="up" className="hero__chooseUS chooseUS">
             <ul className="chooseUS-list baseline">
               <li className="chooseUS-item">
                 <div className="chooseUS-card">
@@ -181,7 +148,7 @@ const Hero = () => {
                 </div>
               </li>
             </ul>
-          </FadeInAnimation> */}
+          </FadeInAnimation> 
         </div>
       </div>
     </section>

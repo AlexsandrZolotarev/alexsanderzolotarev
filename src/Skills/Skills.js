@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
 
-const checkingClasses = () => {};
 const getTabIndex = (bool) => {
   return bool ? -1 : 0;
 };
@@ -155,29 +155,86 @@ let Skills = () => {
               aria-labelledby="tab-1"
               tabIndex={getTabIndex(stateClassesSoft === "is-active")}
             >
-              <ul className="list">
-                <div className="list__item baseline">HTML (HTML5), JSX </div>
-                <div className="list__item baseline">
-                  CSS (CSS3), SASS (SCSS), Bootstrap,
-                </div>
-                <div className="list__item baseline">
+              <ul className="list"> 
+              <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                >
+                  HTML (HTML5), JSX{" "}
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.3}
+                >
+              CSS (CSS3), SASS (SCSS), Bootstrap,
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.4}
+                >
                   JavaScript (ES6+, OOP)
-                </div>
-                <div className="list__item baseline">React</div>
-                <div className="list__item baseline">Redux (Redux Toolkit)</div>
-                <div className="list__item baseline">
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.5}
+                >
+                  React
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.6}
+                >
+                  Redux (Redux Toolkit)
+                </FadeInAnimation>
+                <FadeInAnimation 
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.7}
+                >
                   Formik, Yup, Axios, React Router
-                </div>
-                <div className="list__item baseline">REST API</div>
-                <div className="list__item baseline">
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.8}
+                >
+                  REST API
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.9}
+                >
                   Git (GitHub, Github Pages)
-                </div>
-                <div className="list__item baseline" >
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.95}
+                >
                   Figma, Adobe Photoshop, Microsoft Excel
-                </div>
-                <div className="list__item baseline" >
+                </FadeInAnimation>
+                <FadeInAnimation
+                  className="list__item baseline"
+                  direction="left"
+                  wrapperElement="li"
+                  delay={2.99}
+                >
                   English level - B1
-                </div>
+                </FadeInAnimation>
               </ul>
             </div>
             <div

@@ -7,12 +7,12 @@
   top: 0;
   z-index: 100;
   top: 0;
+ 
   animation: scroling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: rem(100) rem(100);
   transition: 0.2s;
-
   @keyframes scroling-header {
     to {
       background-color: var(--color-black-100);
@@ -27,7 +27,6 @@
     column-gap: rem(14);
     color: var(--color-light);
     z-index: 1;
-    text-shadow: 200px 1px 2px linear-gradient(to right, #0cbaf1 0%, #e95ce9 100%) 1;;
     svg {
       font-size: rem(30);
     }  
@@ -37,6 +36,8 @@
 
   }
   &__body {
+    opacity: 0;
+    transform: translate(0px, -200px);
     padding-block: rem(31);
     @include mobile {
       padding-block: rem(43);

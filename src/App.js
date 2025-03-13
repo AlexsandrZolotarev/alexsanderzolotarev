@@ -8,7 +8,7 @@ import "./styles/main.scss";
 function App() {
   return (
     <>
-    {/* <Loader/> */}
+   <Loader/>
       <Header />
       <main>
         <Hero/>
