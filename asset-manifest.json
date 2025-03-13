@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/alexsanderzolotarev/static/css/main.7d8f8895.css",
-    "main.js": "/alexsanderzolotarev/static/js/main.5b1cf7d0.js",
+    "main.css": "/alexsanderzolotarev/static/css/main.1189e423.css",
+    "main.js": "/alexsanderzolotarev/static/js/main.5a9f49bb.js",
     "static/media/Kuznec12_big.webp": "/alexsanderzolotarev/static/media/Kuznec12_big.d5eaed63a9873717922e.webp",
     "static/media/futuretech_big.png": "/alexsanderzolotarev/static/media/futuretech_big.bdd2921af85d84176206.png",
     "static/media/RivoAgancy_big.png": "/alexsanderzolotarev/static/media/RivoAgancy_big.81ab9d2b53e2bf98d7d6.png",
@@ -27,11 +27,11 @@
     "static/media/javascript.svg": "/alexsanderzolotarev/static/media/javascript.92d0805d66beacbd00dca44bc5e4f718.svg",
     "index.html": "/alexsanderzolotarev/index.html",
     "static/media/css.svg": "/alexsanderzolotarev/static/media/css.c56383af0fc7fa213642ae1fc5fa4b29.svg",
-    "main.7d8f8895.css.map": "/alexsanderzolotarev/static/css/main.7d8f8895.css.map",
-    "main.5b1cf7d0.js.map": "/alexsanderzolotarev/static/js/main.5b1cf7d0.js.map"
+    "main.1189e423.css.map": "/alexsanderzolotarev/static/css/main.1189e423.css.map",
+    "main.5a9f49bb.js.map": "/alexsanderzolotarev/static/js/main.5a9f49bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d8f8895.css",
-    "static/js/main.5b1cf7d0.js"
+    "static/css/main.1189e423.css",
+    "static/js/main.5a9f49bb.js"
   ]
 }

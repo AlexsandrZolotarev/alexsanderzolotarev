@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 
-
-
 let Loader = () => {
   useEffect(() => {
-    window.addEventListener("load", () => {
-      document.querySelector(".preloader").classList.add("done");
-    });
+  if(document.readyState === "interactive") 
+  {
+    document.querySelector(".preloader").classList.add("done");
+  }
   }, []);
   return (
     <div className="preloader">
