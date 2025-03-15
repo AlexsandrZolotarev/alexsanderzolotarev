@@ -164,6 +164,7 @@
     }
   }
   @include tablet {
+    display: none;
     @include visually-hidden;
   }
 }

@@ -14,6 +14,7 @@ function delay(part, delay = 0) {
   setTimeout(() => {
     this(part);
   }, delay);
+  return
 }
 function addVisibleClass(part) {
   const delay = 200;
@@ -39,10 +40,9 @@ const Hero = () => {
     CheckMoveTrain();
     if (checkLoaderComplete()) {
       delay.call(addVisibleClass, liveTypingFirstPart.current, 3000);
-      delay.call(addVisibleClass, liveTypingSecondPart.current, 10000);
+      delay.call(addVisibleClass, liveTypingSecondPart.current, 11000);
     }
   }, []);
-
   return (
     <section className="hero section" aria-labelledby="hero-title" id="About">
       <div className="hero__inner container">
