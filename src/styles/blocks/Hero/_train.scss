@@ -1,15 +1,15 @@
 @use "../../helpers/" as *;
 
 .train {
-  display: none;
-  position: relative;
-  opacity: 1;
-  animation: appearance 3s 5s forwards, move-train 25s 5s linear infinite;
-  .train-wrapper {
-    position: relative;
-
-    z-index: 1;
+  &:not(.move){
+    display: none;
   }
+  position: absolute;
+  right: -120%;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+   animation: move-train 25s 10s linear infinite;
   &__engine {
     &-body {
       display: inline-flex;
@@ -33,7 +33,9 @@
         top: 1rem;
         left: 25%;
         width: 25%;
+        z-index: 2;
       }
+
     }
     &-logo {
       position: absolute;
@@ -131,14 +133,6 @@
       }
     }
   }
-  @keyframes appearance {
-    0%{
-      opacity: 0; /* Элемент не виден */
-  }
-  100% {
-      opacity: 1; /* Элемент не виден */
-  }
-  }
   @keyframes up-down {
     0%,
     100% {
@@ -169,7 +163,8 @@
       transform: translateY(-2px);
     }
   }
-  @include mobile {
+  @include tablet {
     @include visually-hidden;
   }
 }
+

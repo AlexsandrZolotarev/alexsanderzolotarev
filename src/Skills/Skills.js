@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
 
 const getTabIndex = (bool) => {
   return bool ? -1 : 0;
@@ -155,86 +154,25 @@ let Skills = () => {
               aria-labelledby="tab-1"
               tabIndex={getTabIndex(stateClassesSoft === "is-active")}
             >
-              <ul className="list"> 
-              <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                >
-                  HTML (HTML5), JSX{" "}
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.3}
-                >
-              CSS (CSS3), SASS (SCSS), Bootstrap,
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.4}
-                >
-                  JavaScript (ES6+, OOP)
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.5}
-                >
-                  React
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.6}
-                >
-                  Redux (Redux Toolkit)
-                </FadeInAnimation>
-                <FadeInAnimation 
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.7}
-                >
+              <ul className="list">
+                <li className="list__item baseline">HTML (HTML5), JSX </li>
+                <li className="list__item baseline">
+                  CSS (CSS3), SASS (SCSS), Bootstrap,
+                </li>
+                <li className="list__item baseline">JavaScript (ES6+, OOP)</li>
+                <li className="list__item baseline">React</li>
+                <li className="list__item baseline">Redux (Redux Toolkit)</li>
+                <li className="list__item baseline">
                   Formik, Yup, Axios, React Router
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.8}
-                >
-                  REST API
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.9}
-                >
+                </li>
+                <li className="list__item baseline">REST API</li>
+                <li className="list__item baseline">
                   Git (GitHub, Github Pages)
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.95}
-                >
+                </li>
+                <li className="list__item baseline">
                   Figma, Adobe Photoshop, Microsoft Excel
-                </FadeInAnimation>
-                <FadeInAnimation
-                  className="list__item baseline"
-                  direction="left"
-                  wrapperElement="li"
-                  delay={2.99}
-                >
-                  English level - B1
-                </FadeInAnimation>
+                </li>
+                <li className="list__item baseline">English level - B1</li>
               </ul>
             </div>
             <div

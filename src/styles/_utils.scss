@@ -9,7 +9,9 @@
 .visually-hidden {
   @include visually-hidden;
 }
-
+.accent-color{
+  color: var(--color-purple-10);
+}
 .hidden-mobile {
   @include mobile {
     display: none !important;

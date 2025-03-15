@@ -2,7 +2,7 @@
 
 .hero {
   transition: all 2s ease;
-
+ 
   &__clipPathGroup {
     position: absolute;
     top: 0%;
@@ -22,8 +22,9 @@
     grid-template-columns: 50% 50%;
     grid-template-areas:
       "title avatar"
-      "laptop avatar"
+      "train avatar"
       "chooseUS chooseUS";
+      position: relative;
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -32,16 +33,14 @@
   &__chooseUS {
     grid-area: chooseUS;
     grid-column: -1/1;
-    transform: translate(0px, 200px);
+
   }
-  &__laptop {
-    grid-area: laptop;
-    transform: translate(-200px, 0);
+  &__train {
+    grid-area: train;
   }
   &__title {
+
     grid-area: title;
-    transform: translate(0px, 200px);
-    opacity: 0;
     * {
       margin: 0;
     }
@@ -52,8 +51,6 @@
     justify-content: flex-end;
     z-index: 22;
     position: relative;
-    transform: translate(200px, 0px);
-    opacity: 0;
     &-image {
       position: relative;
       transform: scaleX(-1);

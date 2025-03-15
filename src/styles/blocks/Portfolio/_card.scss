@@ -9,29 +9,27 @@
   @include mobile {
     padding: rem(25);
   }
-
   @include mobile {
     grid-template-columns: 1fr;
     justify-items: center;
   }
   &__image {
-    &-wrapper{
+    &-wrapper {
       overflow: hidden;
       border-radius: rem(12);
       cursor: pointer;
       height: rem(320);
     }
-    
-   
+
     transition: scale 500ms;
-    &:hover{
+    &:hover {
       scale: 105%;
     }
   }
   &__body {
-    @include mobile{
-     margin-top: rem(20);
-  }
+    @include mobile {
+      margin-top: rem(20);
+    }
   }
   &__date {
     background-color: var(--color-gray-3);
@@ -42,8 +40,9 @@
   &__title {
     margin-top: rem(10);
   }
-  &__link {
-  }
   &__description {
+    @include mobile {
+      font-size: calc(100% + 30%);
+    }
   }
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { SiBilibili } from "react-icons/si";
-import FadeInAnimation from "../GSAP-animation/FadeInAnimation";
 let onBurgerButtonClick = () => {
   document.documentElement.classList.toggle("is-lock");
 };
@@ -16,7 +15,7 @@ const Header = () => {
   };
   return (
     <header className="header">
-      <FadeInAnimation className="header__body" direction="down">
+      <div className="header__body" >
         <div className="header__body-inner container">
           <a href="/" className="header__logo" title="Home" aria-label="Home">
             <SiBilibili className="logo__image" width="179" height="50" />
@@ -78,7 +77,7 @@ const Header = () => {
             <span className="burger-button__line"></span>
           </button>
         </div>
-      </FadeInAnimation>
+      </div>
     </header>
   );
 };

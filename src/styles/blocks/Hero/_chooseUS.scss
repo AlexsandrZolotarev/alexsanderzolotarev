@@ -2,8 +2,7 @@
 
 .chooseUS {
   --column: 3;
-  opacity: 0;
-  &-list {
+  &-list { 
     display: grid;
     grid-template-columns: auto auto auto;
     gap: rem(50);
