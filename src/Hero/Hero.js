@@ -4,9 +4,8 @@ import { IoBody } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { MdRateReview } from "react-icons/md";
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { SiRedux } from "react-icons/si";
 import { DiCss3 } from "react-icons/di";
-import { FaNode, FaNodeJs, FaReact } from "react-icons/fa";
+import {FaNodeJs} from "react-icons/fa";
 import checkLoaderComplete from "../Loader/checkLoaderComplete";
 import CheckMoveTrain from "./CheckMoveTrain";
 
@@ -14,10 +13,9 @@ function delay(part, delay = 0) {
   setTimeout(() => {
     this(part);
   }, delay);
-  return
 }
 function addVisibleClass(part) {
-  const delay = 200;
+  const delay = 130;
   for (let i = 0; i < part.children.length; i++) {
     setTimeout(() => {
       if (part.children[i].classList.contains("accent-color")) {
@@ -39,8 +37,8 @@ const Hero = () => {
   useEffect(() => {
     CheckMoveTrain();
     if (checkLoaderComplete()) {
-      delay.call(addVisibleClass, liveTypingFirstPart.current, 3000);
-      delay.call(addVisibleClass, liveTypingSecondPart.current, 11000);
+      delay.call(addVisibleClass, liveTypingFirstPart.current, 2500);
+      delay.call(addVisibleClass, liveTypingSecondPart.current, 9000);
     }
   }, []);
   return (
