@@ -11,10 +11,13 @@
         
     }
     &__list:has(:nth-child(4)){
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: rem(10);
+        @include mobile-stack{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr 0.5fr;
+            grid-template-rows: 1fr 1fr;
+            gap: rem(10);
+           
+        }
     }
     &__item
     {
@@ -26,6 +29,7 @@
         @include circleOutline;
         @include mobile{
             padding: rem(13);
+            justify-content: center
         }
     }
     &__image{
