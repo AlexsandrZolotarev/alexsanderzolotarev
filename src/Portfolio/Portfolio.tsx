@@ -14,12 +14,14 @@ import Formik_icon from "../icons/stack/formik.svg";
 import Figma_icon from "../icons/stack/figma.svg";
 import FancyBox from "./FancyBox";
 
-const Portfolio = () => {
-  let expandPicture = (event) => {
-    FancyBox(
-      event.target.parentNode.parentNode.lastElementChild.firstElementChild
-        .nextElementSibling.firstElementChild.innerHTML
-    );
+const Portfolio: React.FC = () => {
+  let expandPicture = (event: React.MouseEvent<HTMLElement>) => {
+    const target = event.currentTarget;
+    const parent = target.parentNode?.parentNode as HTMLElement | null;
+    const content =
+      parent?.lastElementChild?.firstElementChild?.nextElementSibling
+        ?.firstElementChild?.nextSibling?.textContent;
+    FancyBox(content as string | null | undefined);  
   };
   return (
     <section
@@ -90,10 +92,11 @@ const Portfolio = () => {
         <ul className="portfolio__list">
           <li className="portfolio__item">
             <article className="portfolio__item-card card baseline">
-              <a
+            <button
                 className="card__image-wrapper"
-                target="_blank"
+                type="button"
                 title="Open the image in full size"
+                onClick={expandPicture}
               >
                 <img
                   className="card__image"
@@ -102,9 +105,8 @@ const Portfolio = () => {
                   width={400}
                   height={320}
                   loading="lazy"
-                  onClick={expandPicture}
                 ></img>
-              </a>
+              </button>
               <div className="card__body">
                 <time className="card__date" dateTime="2022-08">
                   August 2022
@@ -115,6 +117,7 @@ const Portfolio = () => {
                     href="https://alexsandrzolotarev.github.io/Kuznec12/"
                     target="_blank"
                     title="Open the website in a new tab"
+                      rel="noreferrer"
                   >
                     Master Blacksmith
                   </a>
@@ -164,10 +167,11 @@ const Portfolio = () => {
           </li>
           <li className="portfolio__item">
             <article className="portfolio__item-card card baseline">
-              <a
+              <button
                 className="card__image-wrapper"
-                target="_blank"
+                type="button"
                 title="Open the image in full size"
+                onClick={expandPicture}
               >
                 <img
                   className="card__image"
@@ -176,9 +180,8 @@ const Portfolio = () => {
                   width={400}
                   height={320}
                   loading="lazy"
-                  onClick={expandPicture}
                 ></img>
-              </a>
+              </button>
               <div className="card__body">
                 <time className="card__date" dateTime="2024-10">
                   October 2024
@@ -189,6 +192,7 @@ const Portfolio = () => {
                     href="https://alexsandrzolotarev.github.io/RivoAgency"
                     target="_blank"
                     title="Open the website in a new tab"
+                      rel="noreferrer"
                   >
                     Rivo Agency
                   </a>
@@ -262,10 +266,11 @@ const Portfolio = () => {
           </li>
           <li className="portfolio__item">
             <article className="portfolio__item-card card baseline">
-              <a
+              <button
                 className="card__image-wrapper"
-                target="_blank"
+                type="button"
                 title="Open the image in full size"
+                onClick={expandPicture}
               >
                 <img
                   className="card__image"
@@ -274,9 +279,8 @@ const Portfolio = () => {
                   width={400}
                   height={320}
                   loading="lazy"
-                  onClick={expandPicture}
                 ></img>
-              </a>
+              </button>
               <div className="card__body">
                 <time className="card__date" dateTime="2025-01">
                   January 2025
@@ -287,6 +291,7 @@ const Portfolio = () => {
                     href="https://alexsandrzolotarev.github.io/futuretech"
                     target="_blank"
                     title="Open the website in a new tab"
+                    rel="noreferrer"
                   >
                     Future Tech
                   </a>

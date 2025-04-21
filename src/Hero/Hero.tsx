@@ -9,13 +9,15 @@ import {FaNodeJs} from "react-icons/fa";
 import checkLoaderComplete from "../Loader/checkLoaderComplete";
 import CheckMoveTrain from "./CheckMoveTrain";
 
-function delay(part, delay = 0) {
+
+function delay(fn: (part: HTMLElement | null) => void, part: HTMLElement | null, delay = 0):void {
   setTimeout(() => {
-    this(part);
+    fn(part);
   }, delay);
 }
-function addVisibleClass(part) {
+function addVisibleClass(part: HTMLElement | null) {
   const delay = 130;
+  if(!part) return;
   for (let i = 0; i < part.children.length; i++) {
     setTimeout(() => {
       if (part.children[i].classList.contains("accent-color")) {
@@ -29,16 +31,21 @@ function addVisibleClass(part) {
     }, delay * i);
   }
 }
-const Hero = () => {
-  const laptopKeyboardButtons = new Array(42);
-  laptopKeyboardButtons.fill(0);
-  const liveTypingFirstPart = useRef(null);
-  const liveTypingSecondPart = useRef(null);
+const Hero:React.FC = () => {
+  const liveTypingFirstPart = useRef<HTMLDivElement  | null>(null);
+  const liveTypingSecondPart = useRef<HTMLDivElement  | null>(null);
   useEffect(() => {
     CheckMoveTrain();
     if (checkLoaderComplete()) {
-      delay.call(addVisibleClass, liveTypingFirstPart.current, 2500);
-      delay.call(addVisibleClass, liveTypingSecondPart.current, 9000);
+      if(liveTypingFirstPart.current)
+      {
+        delay(addVisibleClass, liveTypingFirstPart.current, 2500);
+      }
+      if(liveTypingSecondPart.current)
+        {
+          delay(addVisibleClass, liveTypingSecondPart.current, 9000);
+        }
+    
     }
   }, []);
   return (

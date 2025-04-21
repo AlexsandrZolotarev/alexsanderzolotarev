@@ -1,12 +1,13 @@
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
-import Loader from "./Loader/loader";
+import Loader from "./Loader/Loader";
 import Portfolio from "./Portfolio/Portfolio";
 import Scrolling from "./Scrolling/Scrolling";
 import Skills from "./Skills/Skills";
 import "./styles/main.scss";
-function App() {
+
+const App:React.FC = () => {
   return (
     <>
       <Loader/>
@@ -18,9 +19,7 @@ function App() {
         <Portfolio/>
       </main>
       <Footer/>
-      
     </>
   );
 }
-
 export default App;

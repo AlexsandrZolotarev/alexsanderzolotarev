@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { SiBilibili } from "react-icons/si";
-let onBurgerButtonClick = () => {
-  document.documentElement.classList.toggle("is-lock");
-};
 
-const Header = () => {
-  let stateClasses = {
-    isActive: " is-active",
+
+const Header: React.FC= () => {
+
+  let [isActive, setIsActive] = useState<"" | " is-active">("");
+  let onBurgerButtonClick = () => {
+    document.documentElement.classList.toggle("is-lock");
   };
-  let [isActive, setIsActive] = useState("");
   let isActiveOnChange = () => {
-    isActive ? setIsActive("") : setIsActive(stateClasses.isActive);
+    isActive ? setIsActive("") : setIsActive(" is-active");
     onBurgerButtonClick();
   };
   return (

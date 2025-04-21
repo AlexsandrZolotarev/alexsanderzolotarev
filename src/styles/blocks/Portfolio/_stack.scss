@@ -8,6 +8,13 @@
         @include mobile{
             justify-content: center;
         }
+        
+    }
+    &__list:has(:nth-child(4)){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: rem(10);
     }
     &__item
     {

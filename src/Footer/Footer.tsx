@@ -2,7 +2,7 @@ import React from 'react'
 import { FaGithub, FaTelegram } from 'react-icons/fa';
 import { SiVk } from 'react-icons/si';
 
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
     <footer id='Contacts'>
       <div className='footer__inner container'>

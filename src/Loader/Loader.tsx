@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-
-let Loader = () => {
+let Loader:React.FC = () => {
   useEffect(() => {
-    document.querySelector(".preloader").classList.add("done");
+    const preloader = document.querySelector(".preloader") as HTMLElement | null; 
+    preloader?.classList.add("done");
   }, []);
   return (
     <div className="preloader">

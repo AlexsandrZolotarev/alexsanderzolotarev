@@ -14,13 +14,15 @@
     justify-items: center;
   }
   &__image {
+    height: 100%;
     &-wrapper {
       overflow: hidden;
       border-radius: rem(12);
+      border: transparent;
       cursor: pointer;
       height: rem(320);
+      padding: 0;
     }
-
     transition: scale 500ms;
     &:hover {
       scale: 105%;

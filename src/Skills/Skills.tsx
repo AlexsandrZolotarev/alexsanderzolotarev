@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-const getTabIndex = (bool) => {
+const getTabIndex = (bool : boolean) => {
   return bool ? -1 : 0;
 };
-
-let Skills = () => {
-  let [stateClassesHard, setStateClassesHard] = useState("is-active");
-  let [stateClassesSoft, setStateClassesSoft] = useState("");
+let Skills: React.FC= () => {
+  let [stateClassesHard, setStateClassesHard] = useState<"" | "is-active">("is-active");
+  let [stateClassesSoft, setStateClassesSoft] = useState<"" | "is-active">("");
   let updateUISoft = () => {
     setStateClassesSoft("is-active");
     setStateClassesHard("");
@@ -15,23 +14,27 @@ let Skills = () => {
     setStateClassesSoft("");
     setStateClassesHard("is-active");
   };
-  const handleKey = (event) => {
+  const handleKey = (event : React.KeyboardEvent<HTMLDivElement>): void=> {
+
+    const target = event.target as HTMLElement;
+    const parent = target.parentElement;
+    if(!parent) return;
     if (event.key === "ArrowDown" || event.key === "ArrowLeft") {
-      if (event.target === event.target.parentElement.children[0]) {
+      if (target === parent.children[0]) {
         updateUISoft();
-        event.target.parentElement.children[1].focus();
+       (parent.children[1] as HTMLElement).focus();
       } else {
         updateUIHard();
-        event.target.parentElement.children[0].focus();
+        (parent.children[0] as HTMLElement).focus();
       }
     }
     if (event.key === "ArrowUp" || event.key === "ArrowRight") {
-      if (event.target === event.target.parentElement.children[1]) {
+      if (target === parent.children[1]) {
         updateUIHard();
-        event.target.parentElement.children[0].focus();
+        (parent.children[0] as HTMLElement).focus();
       } else {
         updateUISoft();
-        event.target.parentElement.children[1].focus();
+        (parent.children[1] as HTMLElement).focus();
       }
     }
   };
@@ -132,7 +135,7 @@ let Skills = () => {
                 className="tabs__button link"
                 type="button"
                 id="tab-2"
-                role=""
+                role="tab"
                 aria-controls="tabpanel-2"
                 aria-selected="true"
                 tabIndex={getTabIndex(stateClassesHard === "is-active")}
@@ -159,7 +162,7 @@ let Skills = () => {
                 <li className="list__item baseline">
                   CSS (CSS3), SASS (SCSS), Bootstrap,
                 </li>
-                <li className="list__item baseline">JavaScript (ES6+, OOP)</li>
+                <li className="list__item baseline">JavaScript (ES6+, OOP), TypeScript</li>
                 <li className="list__item baseline">React</li>
                 <li className="list__item baseline">Redux (Redux Toolkit)</li>
                 <li className="list__item baseline">
