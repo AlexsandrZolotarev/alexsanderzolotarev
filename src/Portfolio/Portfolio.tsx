@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import kuznec_small from "../images/Portfolio/Kuznec12.webp";
 import RivoAgency_small from "../images/Portfolio/RivoAgancy.webp";
 import futuretech_small from "../images/Portfolio/futuretech.webp";
@@ -15,13 +15,15 @@ import Figma_icon from "../icons/stack/figma.svg";
 import FancyBox from "./FancyBox";
 
 const Portfolio: React.FC = () => {
+  const [loaded, setLoaded] = useState<boolean>(false);
+
   let expandPicture = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget;
     const parent = target.parentNode?.parentNode as HTMLElement | null;
     const content =
       parent?.lastElementChild?.firstElementChild?.nextElementSibling
         ?.firstElementChild?.nextSibling?.textContent;
-    FancyBox(content as string | null | undefined);  
+    FancyBox(content as string | null | undefined);
   };
   return (
     <section
@@ -92,19 +94,21 @@ const Portfolio: React.FC = () => {
         <ul className="portfolio__list">
           <li className="portfolio__item">
             <article className="portfolio__item-card card baseline">
-            <button
+              <button
                 className="card__image-wrapper"
                 type="button"
                 title="Open the image in full size"
                 onClick={expandPicture}
               >
                 <img
-                  className="card__image"
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
                   alt=""
                   src={kuznec_small}
                   width={400}
                   height={320}
-                  loading="lazy"
                 ></img>
               </button>
               <div className="card__body">
@@ -117,7 +121,7 @@ const Portfolio: React.FC = () => {
                     href="https://alexsandrzolotarev.github.io/Kuznec12/"
                     target="_blank"
                     title="Open the website in a new tab"
-                      rel="noreferrer"
+                    rel="noreferrer"
                   >
                     Master Blacksmith
                   </a>
@@ -174,12 +178,14 @@ const Portfolio: React.FC = () => {
                 onClick={expandPicture}
               >
                 <img
-                  className="card__image"
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
                   alt=""
                   src={RivoAgency_small}
                   width={400}
                   height={320}
-                  loading="lazy"
                 ></img>
               </button>
               <div className="card__body">
@@ -192,7 +198,7 @@ const Portfolio: React.FC = () => {
                     href="https://alexsandrzolotarev.github.io/RivoAgency"
                     target="_blank"
                     title="Open the website in a new tab"
-                      rel="noreferrer"
+                    rel="noreferrer"
                   >
                     Rivo Agency
                   </a>
@@ -273,12 +279,14 @@ const Portfolio: React.FC = () => {
                 onClick={expandPicture}
               >
                 <img
-                  className="card__image"
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
                   alt=""
                   src={futuretech_small}
                   width={400}
                   height={320}
-                  loading="lazy"
                 ></img>
               </button>
               <div className="card__body">

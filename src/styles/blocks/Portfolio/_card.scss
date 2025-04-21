@@ -1,5 +1,14 @@
 @use "../../helpers/" as *;
 
+@keyframes BackColor {
+  from {
+    background-color: #222;
+  }
+  to {
+    background-color: #6c6c6c;
+  }
+}
+
 .card {
   display: grid;
   gap: 20px max(40px, 10%);
@@ -15,6 +24,11 @@
   }
   &__image {
     height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    &.is-loaded {
+      opacity: 1;
+    }
     &-wrapper {
       overflow: hidden;
       border-radius: rem(12);
@@ -22,6 +36,13 @@
       cursor: pointer;
       height: rem(320);
       padding: 0;
+      background-color: #222;
+    }
+    &-wrapper:not(:has(.card__image.is-loaded)) {
+      @include mobile {
+        height: rem(100);
+      }
+      animation: BackColor 1.6s ease infinite;
     }
     transition: scale 500ms;
     &:hover {
