@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import kuznec_small from "../images/Portfolio/Kuznec12.webp";
 import RivoAgency_small from "../images/Portfolio/RivoAgancy.webp";
 import futuretech_small from "../images/Portfolio/futuretech.webp";
+import infolog from "../images/Portfolio/infolog.webp";
 import Html_icon from "../icons/stack/html.svg";
+import TS_icon from "../icons/stack/typescript.svg";
+import MaterialUI_icon from "../icons/stack/material-ui.svg";
+import Api_icon from "../icons/stack/api.png";
 import Js_icon from "../icons/stack/javascript.svg";
 import Php_icon from "../icons/stack/php.svg";
 import Css_icon from "../icons/stack/css.svg";
@@ -340,6 +344,99 @@ const Portfolio: React.FC = () => {
                         src={Figma_icon}
                         alt="Figma"
                         title="Figma"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li className="portfolio__item">
+            <article className="portfolio__item-card card baseline">
+              <button
+                className="card__image-wrapper"
+                type="button"
+                title="Open the image in full size"
+                onClick={expandPicture}
+              >
+                <img
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
+                  alt=""
+                  src={infolog}
+                  width={400}
+                  height={320}
+                ></img>
+              </button>
+              <div className="card__body">
+                <time className="card__date" dateTime="2025-01">
+                  January 2023-2025
+                </time>
+                <h3 className="card__title">
+                  <a
+                    className="card__link"
+                    href=""
+                    target="_blank"
+                    title=""
+                    rel="noreferrer"
+                  >
+                    Infologistic24
+                  </a>
+                </h3>
+
+                <div className="card__description">
+                  Developed a web admin interface using React, TypeScript, and
+                  Material UI, with modules for Drivers, Applications, Routes,
+                  Vehicles, User Profiles, Templates, Fines, Operators.
+                  Implemented table virtualization for large datasets and search
+                  filters with debounced input and autocomplete.
+                </div>
+                <div className="card__stack stack">
+                  <ul className="stack__list">
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={React_icon}
+                        alt="React"
+                        title="React"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={TS_icon}
+                        alt="TypeScript"
+                        title="TypeScript"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Api_icon}
+                        alt="API"
+                        title="API"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={MaterialUI_icon}
+                        alt="MaterialUI"
+                        title="MaterialUI"
                         width={36}
                         height={36}
                         loading="lazy"

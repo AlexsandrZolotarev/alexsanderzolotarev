@@ -1,7 +1,7 @@
 import kuznec from "../images/Portfolio/Kuznec12_big.webp";
 import RivoAgency from "../images/Portfolio/RivoAgancy_big.png";
 import futuretech from "../images/Portfolio/futuretech_big.png";
-
+import infolog from "../images/Portfolio/infolog.webp";
 const deleteFancyBox = () => {
   const fancybox = document.getElementById("fancybox");
   if (!fancybox) return;
@@ -83,11 +83,14 @@ const FancyBox = (caption: string | null | undefined) => {
   content.className = "fancybox__content";
 
   const image = document.createElement("img");
+  debugger;
   image.src =
     caption === "Future Tech"
       ? futuretech
       : caption === "Rivo Agency"
       ? RivoAgency
+      : caption === "Infologistic24"
+      ? infolog
       : kuznec;
   image.loading = "lazy";
 
