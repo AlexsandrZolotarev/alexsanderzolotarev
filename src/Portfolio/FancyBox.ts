@@ -19,8 +19,8 @@ const addEventHandlers = (fancybox: HTMLDivElement) => {
 };
 
 const addEventHandlersMousemove = (image: HTMLImageElement) => {
-  image.addEventListener("mousemove", onZoom);
-  image.addEventListener("mouseover", onZoom);
+  image.addEventListener("click", onZoom);
+  image.addEventListener("dblclick", offZoom);
   image.addEventListener("mouseleave", offZoom);
 
   function onZoom(e: MouseEvent) {
