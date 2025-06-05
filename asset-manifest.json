@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alexsanderzolotarev/static/css/main.6e290056.css",
-    "main.js": "/alexsanderzolotarev/static/js/main.3914cf60.js",
+    "main.js": "/alexsanderzolotarev/static/js/main.feb42124.js",
     "static/media/Kuznec12_big.webp": "/alexsanderzolotarev/static/media/Kuznec12_big.d5eaed63a9873717922e.webp",
     "static/media/futuretech_big.png": "/alexsanderzolotarev/static/media/futuretech_big.bdd2921af85d84176206.png",
     "static/media/RivoAgancy_big.png": "/alexsanderzolotarev/static/media/RivoAgancy_big.81ab9d2b53e2bf98d7d6.png",
@@ -18,23 +18,23 @@
     "static/media/ChakraPetch-Bold.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-Bold.0c169359e1cf6abf2b95.woff2",
     "static/media/ChakraPetch-Regular.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-Regular.4f31ac6ad9f194d05a26.woff2",
     "static/media/redux-toolkit.svg": "/alexsanderzolotarev/static/media/redux-toolkit.8522287eab913915a135d8ee507693ed.svg",
-    "static/media/react.svg": "/alexsanderzolotarev/static/media/react.f57b349b4d9df56c9b48c916a8d5adfb.svg",
-    "static/media/redux.svg": "/alexsanderzolotarev/static/media/redux.a907b9f98d324503c0c0d9ac2991eb03.svg",
-    "static/media/php.svg": "/alexsanderzolotarev/static/media/php.099cd051f27e93830fcdb7b1ac05bc40.svg",
-    "static/media/scss.svg": "/alexsanderzolotarev/static/media/scss.67cd0525916c4cdea4eb3abd8ae11137.svg",
-    "static/media/html.svg": "/alexsanderzolotarev/static/media/html.91afbd10a92d040f2824deee88e93b2f.svg",
-    "static/media/figma.svg": "/alexsanderzolotarev/static/media/figma.eea90cbdb2df47f3f9a77474d7dd244c.svg",
+    "static/media/react.svg": "/alexsanderzolotarev/static/media/react.22a05374f4eefdd120b71df3f98d68a1.svg",
+    "static/media/redux.svg": "/alexsanderzolotarev/static/media/redux.3f85561b9a8c76dc1a2aa13fe6b06e18.svg",
+    "static/media/php.svg": "/alexsanderzolotarev/static/media/php.7d28d30bbef7c6e4156c1fc581a6b0f0.svg",
+    "static/media/scss.svg": "/alexsanderzolotarev/static/media/scss.2b723b0dd82ec43605cceb10a94f9030.svg",
+    "static/media/html.svg": "/alexsanderzolotarev/static/media/html.5a733bcd0eac3e816d6591c8840b038a.svg",
+    "static/media/figma.svg": "/alexsanderzolotarev/static/media/figma.da040d302422e2e459bed05cef8a848b.svg",
     "static/media/formik.svg": "/alexsanderzolotarev/static/media/formik.c10641c53994652d8c0aecfac12ca4a7.svg",
     "static/media/javascript.svg": "/alexsanderzolotarev/static/media/javascript.92d0805d66beacbd00dca44bc5e4f718.svg",
     "index.html": "/alexsanderzolotarev/index.html",
     "static/media/material-ui.svg": "/alexsanderzolotarev/static/media/material-ui.60a0ece058ff0f20c1815cf138a56e35.svg",
     "static/media/typescript.svg": "/alexsanderzolotarev/static/media/typescript.f20748caf2dac55710ddeed71de0bac4.svg",
-    "static/media/css.svg": "/alexsanderzolotarev/static/media/css.c56383af0fc7fa213642ae1fc5fa4b29.svg",
+    "static/media/css.svg": "/alexsanderzolotarev/static/media/css.57dffcfebcaf25474ce5cd80ec848d28.svg",
     "main.6e290056.css.map": "/alexsanderzolotarev/static/css/main.6e290056.css.map",
-    "main.3914cf60.js.map": "/alexsanderzolotarev/static/js/main.3914cf60.js.map"
+    "main.feb42124.js.map": "/alexsanderzolotarev/static/js/main.feb42124.js.map"
   },
   "entrypoints": [
     "static/css/main.6e290056.css",
-    "static/js/main.3914cf60.js"
+    "static/js/main.feb42124.js"
   ]
 }
