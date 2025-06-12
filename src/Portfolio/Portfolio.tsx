@@ -5,7 +5,6 @@ import futuretech_small from "../images/Portfolio/futuretech.webp";
 import infolog from "../images/Portfolio/infolog.webp";
 import Html_icon from "../icons/stack/html.svg";
 import TS_icon from "../icons/stack/typescript.svg";
-import MaterialUI_icon from "../icons/stack/material-ui.svg";
 import Api_icon from "../icons/stack/api.png";
 import Js_icon from "../icons/stack/javascript.svg";
 import Php_icon from "../icons/stack/php.svg";
@@ -385,13 +384,12 @@ const Portfolio: React.FC = () => {
                     title=""
                     rel="noreferrer"
                   >
-                    Infologistic24
+                  ИТ-платформа (поNDA)
                   </a>
                 </h3>
 
                 <div className="card__description">
-                  Developed a web admin interface using React, TypeScript, and
-                  Material UI, with modules for Drivers, Applications, Routes,
+                  Developed a web admin interface using React, TypeScript, with modules for Drivers, Applications, Routes,
                   Vehicles, User Profiles, Templates, Fines, Operators.
                   Implemented table virtualization for large datasets and search
                   filters with debounced input and autocomplete.
@@ -431,17 +429,7 @@ const Portfolio: React.FC = () => {
                         loading="lazy"
                       ></img>
                     </li>
-                    <li className="stack__item">
-                      <img
-                        className="stack__image"
-                        src={MaterialUI_icon}
-                        alt="MaterialUI"
-                        title="MaterialUI"
-                        width={36}
-                        height={36}
-                        loading="lazy"
-                      ></img>
-                    </li>
+                  
                   </ul>
                 </div>
               </div>
