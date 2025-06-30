@@ -359,7 +359,6 @@ const Portfolio: React.FC = () => {
                 className="card__image-wrapper"
                 type="button"
                 title="Open the image in full size"
-                onClick={expandPicture}
               >
                 <img
                   className={`card__image ${loaded ? "is-loaded" : ""}`}
@@ -374,7 +373,7 @@ const Portfolio: React.FC = () => {
               </button>
               <div className="card__body">
                 <time className="card__date" dateTime="2025-01">
-                  January 2023-2025
+                  December 2023-2025
                 </time>
                 <h3 className="card__title">
                   <a
@@ -384,7 +383,7 @@ const Portfolio: React.FC = () => {
                     title=""
                     rel="noreferrer"
                   >
-                  ИТ-платформа (поNDA)
+                  Infologistic 24
                   </a>
                 </h3>
 
