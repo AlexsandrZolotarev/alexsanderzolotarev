@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import kuznec_small from "../images/Portfolio/Kuznec12.webp";
 import RivoAgency_small from "../images/Portfolio/RivoAgancy.webp";
 import futuretech_small from "../images/Portfolio/futuretech.webp";
+import fourHorsesClub from "../images/Portfolio/Four-Horses-Club.webp";
 import infolog from "../images/Portfolio/infolog.webp";
 import Html_icon from "../icons/stack/html.svg";
 import TS_icon from "../icons/stack/typescript.svg";
@@ -383,15 +384,16 @@ const Portfolio: React.FC = () => {
                     title=""
                     rel="noreferrer"
                   >
-                  Infologistic 24
+                    Infologistic 24
                   </a>
                 </h3>
 
                 <div className="card__description">
-                  Developed a web admin interface using React, TypeScript, with modules for Drivers, Applications, Routes,
-                  Vehicles, User Profiles, Templates, Fines, Operators.
-                  Implemented table virtualization for large datasets and search
-                  filters with debounced input and autocomplete.
+                  Developed a web admin interface using React, TypeScript, with
+                  modules for Drivers, Applications, Routes, Vehicles, User
+                  Profiles, Templates, Fines, Operators. Implemented table
+                  virtualization for large datasets and search filters with
+                  debounced input and autocomplete.
                 </div>
                 <div className="card__stack stack">
                   <ul className="stack__list">
@@ -428,7 +430,91 @@ const Portfolio: React.FC = () => {
                         loading="lazy"
                       ></img>
                     </li>
-                  
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li className="portfolio__item">
+            <article className="portfolio__item-card card baseline">
+              <button
+                className="card__image-wrapper"
+                type="button"
+                title="Open the image in full size"
+                onClick={expandPicture}
+              >
+                <img
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
+                  alt=""
+                  src={fourHorsesClub}
+                  width={400}
+                  height={320}
+                ></img>
+              </button>
+              <div className="card__body">
+                <time className="card__date" dateTime="2025-01">
+                  October 2025
+                </time>
+                <h3 className="card__title">
+                  <a
+                    className="card__link"
+                    href="https://alexsandrzolotarev.github.io/The-4-Horse-Club/"
+                    target="_blank"
+                    title=""
+                    rel="noreferrer"
+                  >
+                    The Four Horses Club
+                  </a>
+                </h3>
+
+                <div className="card__description">
+                  Adaptive landing page layout with neat semantics and BEM
+                  markup. I use the Sass preprocessor (SCSS), modular style
+                  structure, and adaptive rem units in the project. There is a
+                  lot of JavaScript: smooth scrolling on anchors, a "running
+                  line", a carousel of participants with pagination, stage
+                  switch tabs, state management through data attributes. The
+                  layout is available: ARIA-attributes, correct roles, aria-live
+                  for pagination status, lazy images (loading="lazy").
+                </div>
+                <div className="card__stack stack">
+                  <ul className="stack__list">
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Js_icon}
+                        alt="JS"
+                        title="JS"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Scss_icon}
+                        alt="Redux"
+                        title="Redux"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Figma_icon}
+                        alt="Figma"
+                        title="Figma"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
                   </ul>
                 </div>
               </div>

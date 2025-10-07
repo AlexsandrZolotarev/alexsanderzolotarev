@@ -2,6 +2,7 @@ import kuznec from "../images/Portfolio/Kuznec12_big.webp";
 import RivoAgency from "../images/Portfolio/RivoAgancy_big.png";
 import futuretech from "../images/Portfolio/futuretech_big.png";
 import infolog from "../images/Portfolio/infolog.webp";
+import fourHorsesClub from "../images/Portfolio/Four-Horses-Club_big.webp";
 const deleteFancyBox = () => {
   const fancybox = document.getElementById("fancybox");
   if (!fancybox) return;
@@ -9,7 +10,7 @@ const deleteFancyBox = () => {
   setTimeout(() => {
     fancybox.remove();
     document.documentElement.classList.remove("is-lock");
-  }, 300); 
+  }, 300);
 };
 
 const addEventHandlers = (fancybox: HTMLDivElement) => {
@@ -49,8 +50,8 @@ const FancyBox = (caption: string | null | undefined) => {
   document.documentElement.classList.add("is-lock");
 
   const spinner = document.createElement("div");
-    spinner.className = "fancybox__spinner";
-    document.body.appendChild(spinner);
+  spinner.className = "fancybox__spinner";
+  document.body.appendChild(spinner);
 
   const fancybox = document.createElement("div");
   fancybox.className = "fancybox";
@@ -59,7 +60,10 @@ const FancyBox = (caption: string | null | undefined) => {
   fancybox.setAttribute("role", "dialog");
   fancybox.setAttribute("aria-modal", "true");
   fancybox.setAttribute("aria-hidden", "false");
-  fancybox.setAttribute("aria-label", "You can close the window by pressing ESC");
+  fancybox.setAttribute(
+    "aria-label",
+    "You can close the window by pressing ESC"
+  );
 
   const background = document.createElement("div");
   background.className = "fancybox__background";
@@ -89,8 +93,8 @@ const FancyBox = (caption: string | null | undefined) => {
       ? futuretech
       : caption === "Rivo Agency"
       ? RivoAgency
-      : caption === "Infologistic24"
-      ? infolog
+      : caption === "The Four Horses Club"
+      ? fourHorsesClub
       : kuznec;
   image.loading = "lazy";
 
