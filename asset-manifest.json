@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alexsanderzolotarev/static/css/main.cafbdd34.css",
-    "main.js": "/alexsanderzolotarev/static/js/main.9d8c68a5.js",
+    "main.js": "/alexsanderzolotarev/static/js/main.b266f921.js",
     "static/media/Kuznec12_big.webp": "/alexsanderzolotarev/static/media/Kuznec12_big.d5eaed63a9873717922e.webp",
     "static/media/Four-Horses-Club_big.webp": "/alexsanderzolotarev/static/media/Four-Horses-Club_big.874b41be347fa61fa487.webp",
     "static/media/futuretech_big.png": "/alexsanderzolotarev/static/media/futuretech_big.bdd2921af85d84176206.png",
@@ -13,6 +13,7 @@
     "static/media/image33.webp": "/alexsanderzolotarev/static/media/image33.a0cc17f4241dd0ef6f8d.webp",
     "static/media/futuretech.webp": "/alexsanderzolotarev/static/media/futuretech.1189682d479a70b5c84b.webp",
     "static/media/infolog.webp": "/alexsanderzolotarev/static/media/infolog.b5b5454e9052974b2085.webp",
+    "static/media/GeneratorPolygons.webp": "/alexsanderzolotarev/static/media/GeneratorPolygons.c20ef6ddb9f04242f5ca.webp",
     "static/media/ClipPathGroupMain.webp": "/alexsanderzolotarev/static/media/ClipPathGroupMain.0079038fa5e8e6472979.webp",
     "static/media/ChakraPetch-SemiBold.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-SemiBold.3e9fd31ed73ac19b24e6.woff2",
     "static/media/ChakraPetch-Medium.woff2": "/alexsanderzolotarev/static/media/ChakraPetch-Medium.23d07967400066357341.woff2",
@@ -29,13 +30,14 @@
     "static/media/formik.svg": "/alexsanderzolotarev/static/media/formik.c10641c53994652d8c0aecfac12ca4a7.svg",
     "static/media/javascript.svg": "/alexsanderzolotarev/static/media/javascript.92d0805d66beacbd00dca44bc5e4f718.svg",
     "index.html": "/alexsanderzolotarev/index.html",
+    "static/media/webpack.svg": "/alexsanderzolotarev/static/media/webpack.468cc9ee8610598082454043e8cebe57.svg",
     "static/media/typescript.svg": "/alexsanderzolotarev/static/media/typescript.f20748caf2dac55710ddeed71de0bac4.svg",
     "static/media/css.svg": "/alexsanderzolotarev/static/media/css.57dffcfebcaf25474ce5cd80ec848d28.svg",
     "main.cafbdd34.css.map": "/alexsanderzolotarev/static/css/main.cafbdd34.css.map",
-    "main.9d8c68a5.js.map": "/alexsanderzolotarev/static/js/main.9d8c68a5.js.map"
+    "main.b266f921.js.map": "/alexsanderzolotarev/static/js/main.b266f921.js.map"
   },
   "entrypoints": [
     "static/css/main.cafbdd34.css",
-    "static/js/main.9d8c68a5.js"
+    "static/js/main.b266f921.js"
   ]
 }
