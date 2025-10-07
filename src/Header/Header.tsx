@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { SiBilibili } from "react-icons/si";
 
-
-const Header: React.FC= () => {
-
+const Header: React.FC = () => {
   let [isActive, setIsActive] = useState<"" | " is-active">("");
   let onBurgerButtonClick = () => {
     document.documentElement.classList.toggle("is-lock");
@@ -14,7 +12,7 @@ const Header: React.FC= () => {
   };
   return (
     <header className="header">
-      <div className="header__body" >
+      <div className="header__body">
         <div className="header__body-inner container">
           <a href="/" className="header__logo" title="Home" aria-label="Home">
             <SiBilibili className="logo__image" width="179" height="50" />
@@ -58,7 +56,13 @@ const Header: React.FC= () => {
                 </li>
               </ul>
             </nav>
-            <a href="#Contacts" className="header__contact-us-link link">
+            <a
+              href="#Contacts"
+              className="header__contact-us-link link"
+              onClick={() => {
+                !isActive || isActiveOnChange();
+              }}
+            >
               Contacts
             </a>
           </div>
