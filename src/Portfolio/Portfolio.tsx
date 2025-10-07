@@ -3,10 +3,12 @@ import kuznec_small from "../images/Portfolio/Kuznec12.webp";
 import RivoAgency_small from "../images/Portfolio/RivoAgancy.webp";
 import futuretech_small from "../images/Portfolio/futuretech.webp";
 import fourHorsesClub from "../images/Portfolio/Four-Horses-Club.webp";
+import GeneratorPolygons from "../images/Portfolio/GeneratorPolygons.webp";
 import infolog from "../images/Portfolio/infolog.webp";
 import Html_icon from "../icons/stack/html.svg";
 import TS_icon from "../icons/stack/typescript.svg";
 import Api_icon from "../icons/stack/api.png";
+import Webpack_icon from "../icons/stack/webpack.svg";
 import Js_icon from "../icons/stack/javascript.svg";
 import Php_icon from "../icons/stack/php.svg";
 import Css_icon from "../icons/stack/css.svg";
@@ -374,7 +376,7 @@ const Portfolio: React.FC = () => {
               </button>
               <div className="card__body">
                 <time className="card__date" dateTime="2025-01">
-                  December 2023-2025
+                  May 2023 - June 2025
                 </time>
                 <h3 className="card__title">
                   <a
@@ -425,6 +427,77 @@ const Portfolio: React.FC = () => {
                         src={Api_icon}
                         alt="API"
                         title="API"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li className="portfolio__item">
+            <article className="portfolio__item-card card baseline">
+              <button
+                className="card__image-wrapper"
+                type="button"
+                title="Open the image in full size"
+              >
+                <img
+                  className={`card__image ${loaded ? "is-loaded" : ""}`}
+                  onLoad={() => {
+                    setLoaded(true);
+                  }}
+                  alt=""
+                  src={GeneratorPolygons}
+                  width={400}
+                  height={320}
+                ></img>
+              </button>
+              <div className="card__body">
+                <time className="card__date" dateTime="2025-01">
+                  July 2025
+                </time>
+                <h3 className="card__title">
+                  <a
+                    className="card__link"
+                    href="https://alexsandrzolotarev.github.io/GeneratorPolygons/"
+                    target="_blank"
+                    title=""
+                    rel="noreferrer"
+                  >
+                    Generator Polygons
+                  </a>
+                </h3>
+
+                <div className="card__description">
+                  A mini-application based on pure Web Components without
+                  frameworks. It consists of two zones: BufferZone — generates
+                  random SVG polygons and supports drag-and-drop, and WorkZone —
+                  an infinite grid with axes, zooming and panning. All elements
+                  and positions are saved in localStorage. Drag-and-drop is
+                  implemented via SortableJS, the build is Webpack.
+                </div>
+                <div className="card__stack stack">
+                  <ul className="stack__list">
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Js_icon}
+                        alt="JS"
+                        title="JS"
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      ></img>
+                    </li>
+                    <li className="stack__item">
+                      <img
+                        className="stack__image"
+                        src={Webpack_icon}
+                        alt="Webpack"
+                        title="Webpack"
                         width={36}
                         height={36}
                         loading="lazy"
