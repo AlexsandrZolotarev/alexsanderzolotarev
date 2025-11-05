@@ -1,0 +1,30 @@
+@use "../helpers" as *;
+
+
+.grid {
+    &-item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        column-gap: 20px;
+        &--main{
+            .grid-label{
+                transform: rotate(25deg);
+            }
+        }
+        &--other{
+            .grid-label{
+                transform: rotate(153deg);
+                background-color: var(--color-success);
+            }
+        }
+      }
+      &-label {
+        position: absolute;
+        // z-index: -1;
+        display: block;
+        top: 40%;
+        height: rem(1);
+        background-color: var(--color-error);
+      }
+  }

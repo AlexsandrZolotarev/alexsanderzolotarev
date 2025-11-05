@@ -1,0 +1,24 @@
+@use "../../helpers/" as *;
+.list {
+  &__item {
+    margin-block: rem(24);
+    padding: rem(24);
+   
+    // &:not(.without):nth-child(odd)
+    // {
+    //   opacity: 0;  
+    //   transform: translate(200px, 0px);
+    // }
+    // &:not(.without):nth-child(even)
+    // {
+    //   opacity: 0;  
+    //   transform: translate(-200px, 0px);
+    // }
+    @include mobile {
+      padding: rem(24) rem(14);
+    }
+    @include hover {
+      border-image: var(--border-image);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@use "../../helpers/" as *;
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.fancybox {
+  position: fixed;
+  inset: 0;
+  z-index: 30000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform, opacity;
+  contain: layout style;
+
+  &.is-visible {
+    opacity: 1;
+  }
+
+  &__background {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &__toolbar {
+    display: flex;
+    padding: 1rem;
+  }
+
+  &__button {
+    margin-left: auto;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: white;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &__viewport {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: clamp(70vh, 85vh, 90vh);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      cursor: zoom-in;
+      &.is-loaded {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__caption {
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px 0 0 -24px;
+    padding: 5px;
+    animation: spin 0.6s linear infinite;
+    z-index: 99999;
+    pointer-events: none;
+    @include circleOutline;
+    &::after {
+      padding: 5px;
+    }
+  }
+}

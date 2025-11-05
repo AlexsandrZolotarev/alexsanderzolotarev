@@ -1,0 +1,38 @@
+@use "../../helpers/" as *;
+
+
+.stack{
+    &__list{
+        display: flex;
+        margin-top: rem(34);
+        @include mobile{
+            justify-content: center;
+        }
+        
+    }
+    &__list:has(:nth-child(4)){
+        @include mobile-stack{
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr 0.5fr;
+            grid-template-rows: 1fr 1fr;
+            gap: rem(10);
+           
+        }
+    }
+    &__item
+    {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: rem(18);
+        margin-right: rem(15); 
+        @include circleOutline;
+        @include mobile{
+            padding: rem(13);
+            justify-content: center
+        }
+    }
+    &__image{
+       
+    }
+}

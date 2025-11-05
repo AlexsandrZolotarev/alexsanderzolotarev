@@ -1,0 +1,47 @@
+@use '../../helpers/' as *;
+
+/* Общие */
+
+.cursorDot {
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform, left, top, opacity, scale;
+  mix-blend-mode: multiply;
+}
+.cursorRing {
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-33%, -33%);
+  opacity: 0;
+  will-change: transform, left, top, opacity, scale;
+  mix-blend-mode: multiply;
+}
+.cursorDot {
+  width: 4px;
+  height: 4px;
+  background-color: #606887;
+}
+
+.cursorRing {
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #606887;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursorRing,
+  .cursorDot {
+    display: none;
+  }
+}

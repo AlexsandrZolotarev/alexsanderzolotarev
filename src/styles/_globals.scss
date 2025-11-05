@@ -1,0 +1,150 @@
+@use 'helpers' as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+#root {
+  position: relative;
+  z-index: 30;
+}
+body {
+  @include fluid-text(28, 14);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+  color: var(--color-gray-1);
+  background-color: var(--color-black-100);
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: var(--color-light);
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  @include fluid-text(56, 48);
+  font-weight: 600;
+}
+
+h2,
+.h2 {
+  @include fluid-text(48, 32);
+}
+
+h3,
+.h3 {
+  @include fluid-text(40, 28);
+}
+
+h4,
+.h4 {
+  @include fluid-text(26, 18);
+  font-weight: 500;
+}
+
+h5,
+.h5 {
+  @include fluid-text(32, 24);
+}
+
+h6,
+.h6 {
+  @include fluid-text(28, 18);
+}
+
+.h7 {
+  @include fluid-text(20, 16);
+  font-weight: 400;
+}
+.h8 {
+  @include fluid-text(20, 16);
+  font-weight: 500;
+}
+.h9 {
+  @include fluid-text(18, 16);
+  font-weight: 400;
+}
+.h7,
+.h8,
+.h9 {
+  color: var(--color-light);
+}
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  @include hover {
+    color: var(--color-purple-10);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
+
+.button {
+  background: var(--linear);
+  border: none;
+  color: var(--color-light);
+  text-transform: uppercase;
+  padding: rem(18) rem(38);
+  letter-spacing: 0.11em;
+}
+.link {
+  border: var(--border);
+  padding: rem(12) rem(24);
+  border-image: var(--border-image);
+  filter: hue-rotate(360deg);
+  @include hover {
+    color: var(--color-light);
+    animation: linearGradient 1s infinite linear;
+  }
+}
+@keyframes linearGradient {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

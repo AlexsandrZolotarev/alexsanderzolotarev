@@ -1,0 +1,28 @@
+@use "../helpers/" as *;
+
+.title {
+  position: relative;
+  &-lights {
+    position: absolute;
+    z-index: -1;
+    @include abs-center;
+    @include mobile {
+      width: rem(310);
+    }
+  }
+  &-body {
+    display: flex;
+    justify-content: center;
+    padding-bottom: rem(133);
+    @include mobile {
+      padding-bottom: rem(116);
+    }
+    border-bottom: var(--border);
+    border-image: var(--border-image);
+  }
+  &-title {
+    text-transform: uppercase;
+    position: relative;
+  }
+
+}

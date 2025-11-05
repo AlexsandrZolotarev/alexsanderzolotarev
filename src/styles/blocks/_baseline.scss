@@ -1,0 +1,12 @@
+@use "../helpers" as *;
+
+.baseline{
+    background-color: var(--color-black-50);
+    border: var(--border);
+    border-image: linear-gradient(
+        to left,
+        rgba(176, 176, 178, 0) 0%,
+        rgba(176, 176, 178, 1) 100%
+      )
+      1;
+}

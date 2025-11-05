@@ -1,0 +1,64 @@
+@use "../../helpers/" as *;
+
+.hero {
+  transition: all 2s ease;
+ 
+  &__clipPathGroup {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 11;
+    background: url("../../../images/Hero/ClipPathGroupMain.webp") no-repeat
+      center / cover;
+    width: rem(736);
+    height: rem(353);
+    @include mobile {
+      width: rem(736);
+      height: rem(353);
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "title avatar"
+      "train avatar"
+      "chooseUS chooseUS";
+      position: relative;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__chooseUS {
+    grid-area: chooseUS;
+    grid-column: -1/1;
+
+  }
+  &__train {
+    grid-area: train;
+  }
+  &__title {
+
+    grid-area: title;
+    * {
+      margin: 0;
+    }
+  }
+  &__avatar {
+    grid-area: avatar;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 22;
+    position: relative;
+    &-image {
+      position: relative;
+      transform: scaleX(-1);
+      transform-origin: center;
+      transform-box: fill-box;
+      z-index: 47;
+    }
+  }
+  
+
+}

@@ -1,0 +1,34 @@
+@use './normalise';
+@use './fonts';
+@use './variables';
+@use './utils';
+@use './globals';
+
+@use './blocks/Header/header';
+@use './blocks/Header/burgerButton';
+
+@use './blocks/Footer/footer';
+@use './blocks/Footer/soc1als';
+
+@use './blocks/Hero/hero';
+@use './blocks/Hero/chooseUS';
+@use './blocks/Hero/live-typing';
+
+@use './blocks/section';
+@use './blocks/grid';
+@use './blocks/clipPathGroup';
+@use './blocks/lights';
+@use './blocks/title';
+@use './blocks/baseline';
+
+@use './blocks/Skills/tabs';
+@use './blocks/Skills/list';
+@use './blocks/Loader/loader';
+
+@use './blocks/Portfolio/portfolio';
+@use './blocks/Portfolio/card';
+@use './blocks/Portfolio/stack';
+
+@use './blocks/FancyBox/fancyBox';
+
+@use './blocks/CursorFollower/CursorFollower';
