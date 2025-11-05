@@ -36,7 +36,7 @@ const Loader: React.FC<LoaderProps> = ({ delay }) => {
     }
   }, []);
   useEffect(() => {
-    const id = window.setTimeout(() => setDone(true), delay - 1000);
+    const id = window.setTimeout(() => setDone(true), delay - 700);
     return () => window.clearTimeout(id);
   }, [delay]);
 
