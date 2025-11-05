@@ -1,0 +1,30 @@
+@use '../../../helpers' as *;
+
+.error {
+  position: fixed;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: var(--animation-sd);
+  }
+
+  &__title {
+    font-size: rem(40);
+    text-transform: uppercase;
+  }
+
+  &__code {
+    @include fluid-text(192, 48);
+  }
+}

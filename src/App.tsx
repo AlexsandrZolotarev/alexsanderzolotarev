@@ -23,7 +23,7 @@ const App = () => {
       <Suspense fallback={<Loader delay={DELAY} />}>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/f" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
