@@ -46,7 +46,9 @@ const Header = () => {
                     className="header__menu-theme"
                     aria-label="Toggle theme"
                   >
-                    {theme === 'dark' ? <Moon /> : <Sun />}
+                    <span key={theme} className="header__menu-icon">
+                      {theme === 'dark' ? <Moon /> : <Sun />}
+                    </span>
                   </button>
                 </li>
               </ul>

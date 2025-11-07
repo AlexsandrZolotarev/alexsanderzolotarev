@@ -7,27 +7,23 @@
   top: 0;
   z-index: 100;
   top: 0;
-
+  color: currentColor;
   &__logo {
     font-size: rem(20);
     display: flex;
     position: relative;
     align-items: center;
     column-gap: rem(14);
-    color: var(--color-light);
     z-index: 1;
     svg {
       width: rem(50);
-    }
-    @include hover {
-      color: var(--color-purple-10);
+      @include hover {
+        color: var(--color-purple-10);
+      }
     }
   }
   &__body {
-    padding-block: rem(31);
-    @include mobile {
-      padding-block: rem(43);
-    }
+    padding-top: rem(31);
     &-inner {
       display: flex;
       justify-content: space-between;
@@ -47,7 +43,6 @@
       justify-content: center;
       flex-direction: column;
       row-gap: 3rem;
-      background-color: var(--color-black-50);
       transition-duration: var(--transition-duration);
       &:not(.is-active) {
         @include hide;
@@ -83,8 +78,36 @@
       }
     }
     &-lang {
+      color: currentColor;
     }
     &-theme {
+      position: relative;
+      &:active .header__menu-icon {
+        transform: scale(0.95);
+      }
     }
+    &-icon {
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.4s ease;
+    }
+  }
+}
+@keyframes themeChangeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%) scale(0.8) rotate(-15deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20%) scale(0.8) rotate(15deg);
   }
 }

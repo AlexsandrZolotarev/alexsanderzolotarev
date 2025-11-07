@@ -1,25 +1,22 @@
-@use "../../helpers/" as *;
+@use '../../helpers/' as *;
 
-
-.burger-button{
+.burger-button {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   border: var(--border);
   border-image: var(--border-image);
   padding: rem(10) rem(10);
-  color: var(--color-light);
   background-color: transparent;
+  color: currentColor;
   row-gap: rem(3);
-  
   &__line {
     background-color: currentColor;
     width: rem(20);
     height: rem(2);
     border-radius: 1rem;
     transition-duration: var(--transition-duration);
-    &:nth-child(2)
-    {
+    &:nth-child(2) {
       width: 80%;
       align-self: end;
     }
@@ -29,20 +26,19 @@
     }
   }
   &.is-active {
-    .burger-button__line
-    {
-        &:first-child{
-            rotate: 45deg;
-            transform-origin: 0;
-            translate: 0.24rem -0.15rem
-        }
-        &:nth-child(2){
-          width:100%;
-            rotate: -45deg;
-        }
-        &:last-child{
-           width: 0;
-        }
+    .burger-button__line {
+      &:first-child {
+        rotate: 45deg;
+        transform-origin: 0;
+        translate: 0.24rem -0.15rem;
+      }
+      &:nth-child(2) {
+        width: 100%;
+        rotate: -45deg;
+      }
+      &:last-child {
+        width: 0;
+      }
     }
   }
 }
