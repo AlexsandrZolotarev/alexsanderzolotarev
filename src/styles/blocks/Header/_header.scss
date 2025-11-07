@@ -17,7 +17,7 @@
     color: var(--color-light);
     z-index: 1;
     svg {
-      width: 100px;
+      width: rem(50);
     }
     @include hover {
       color: var(--color-purple-10);
@@ -64,64 +64,27 @@
       justify-content: center;
     }
   }
-}
-.header.is-scrolled {
-  background-color: var(--color-black-100);
-  box-shadow:
-    -4px -4px 12px hsla(0, 0%, 100%, 0.05),
-    4px 4px 12px black;
-}
 
-.new-main-marketing-logos .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
+  &__controls {
+    display: flex;
+    gap: rem(16);
+    align-items: center;
+  }
 
-.new-main-marketing-logos-bottom {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 24px;
-  align-items: center;
-  justify-items: center;
-}
-
-.new-main-marketing-logos .marketing-logo-item img {
-  max-width: 140px;
-  width: 100%;
-  height: auto;
-  filter: grayscale(1);
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-.new-main-marketing-logos .marketing-logo-item img:hover {
-  opacity: 1;
-}
-
-@media (max-width: 1024px) {
-  .new-main-marketing-logos-bottom {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  .new-main-marketing-logos .marketing-logo-item img {
-    max-width: 120px;
-  }
-}
-
-@media (max-width: 640px) {
-  .new-main-marketing-logos-bottom {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .new-main-marketing-logos .marketing-logo-item img {
-    max-width: 100px;
-  }
-}
-@media (max-width: 414px) {
-  .new-main-marketing-logos-bottom {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .new-main-marketing-logos .marketing-logo-item img {
-    max-width: 92px;
+  &__menu {
+    &-list {
+      display: flex;
+      gap: rem(16);
+    }
+    &-item {
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+    &-lang {
+    }
+    &-theme {
+    }
   }
 }

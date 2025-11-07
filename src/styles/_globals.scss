@@ -14,8 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
-  color: var(--color-gray-1);
-  background-color: var(--color-black-100);
+  color: var(--color-text);
+  background-color: var(--bg-color);
 }
 
 main {
@@ -97,7 +97,9 @@ svg * {
   transition-duration: var(--transition-duration);
   cursor: pointer;
 }
-
+svg {
+  color: var(--color-svg);
+}
 a {
   color: inherit;
   cursor: pointer;

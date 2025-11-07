@@ -1,9 +1,12 @@
 @use './helpers' as *;
 
 :root {
+  --bg-color: #f3f2f9;
   --color-light: white;
   --color-black-50: #252532;
-  --color-black-100: #18181b;
+  --color-svg: #252532;
+  --color-text: #252532;
+
   --border: #{rem(1)} solid;
   --border-gray: #{rem(1)} solid;
   --border-image: linear-gradient(to right, #0cbaf1 0%, #e95ce9 100%) 1;
@@ -26,4 +29,13 @@
   --transition: all 2s ease;
   --animation-sd: slideDown 0.8s ease forwards;
   --linear: linear-gradient(90deg, #0cbaf1, #e95ce9);
+}
+[data-theme='dark'] {
+  --bg-color: #18181b;
+  --color-text: #b0b0b2;
+  --color-svg: #e6e6e6;
+  --text-color: #e6e6e6;
+  --accent-color: #66aaff;
+  --border-color: rgba(255, 255, 255, 0.15);
+  --shadow-color: rgba(255, 255, 255, 0.05);
 }

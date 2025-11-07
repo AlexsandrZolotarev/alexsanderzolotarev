@@ -7,8 +7,8 @@ function HomePage() {
   return (
     <main>
       <Hero />
-      <Skills />
-      <Portfolio />
+      {/* <Skills />
+      <Portfolio /> */}
       <Footer />
     </main>
   );

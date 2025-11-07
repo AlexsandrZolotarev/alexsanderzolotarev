@@ -18,7 +18,7 @@ const Hero = () => {
             </h1>
           </div>
 
-          <div className="hero__avatar">
+          {/* <div className="hero__avatar">
             <img
               alt="Красивый молодой парень"
               className="hero__avatar-image"
@@ -27,7 +27,7 @@ const Hero = () => {
               height={626}
             ></img>
             <div className="hero__avatar-background lights" aria-hidden="true"></div>
-          </div>
+          </div> */}
           <div className="hero__chooseUS chooseUS">
             <ul className="chooseUS-list baseline">
               <li className="chooseUS-item">
