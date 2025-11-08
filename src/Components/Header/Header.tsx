@@ -4,8 +4,11 @@ import Sun from '../../images/Header/Sun.svg?react';
 import Moon from '../../images/Header/Moon.svg?react';
 import { useTheme } from '../../hooks/useTheme';
 import { useLang } from '../../hooks/useLang';
+import { useAppReady } from '../../hooks/useAppReady';
 
 const Header = () => {
+  const { appReady } = useAppReady();
+
   const { theme, toggleTheme } = useTheme();
   const { lang, toggleLang, translate } = useLang();
   let [isActive, setIsActive] = useState<'' | ' is-active'>('');
@@ -22,13 +25,14 @@ const Header = () => {
         <div className="header__body-inner container">
           <a
             href="/"
-            className="header__logo"
+            className={`header__logo ${appReady ? 'is-animate' : ''}`}
             title={translate('header.logo.title')}
             aria-label={translate('header.logo.aria')}
           >
+            <span className="visually-hidden">Home</span>
             <Logo aria-hidden="true" />
           </a>
-          <div className="header__controls">
+          <div className={`header__controls ${appReady ? 'is-animate' : ''}`}>
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
@@ -57,17 +61,17 @@ const Header = () => {
             </nav>
             <div className={'header__overlay' + isActive}>
               <a
-                href="#Contacts"
+                href={translate('header.burger.projects')}
                 className="header__contact-us-link link"
                 onClick={() => {
                   !isActive || isActiveOnChange();
                 }}
               >
-                {translate('header.contact')}
+                {translate('header.burger.projects')}
               </a>
             </div>
             <button
-              className={'header__burger-button burger-button visible-tablet' + isActive}
+              className={'header__burger-button burger-button' + isActive}
               aria-label={translate('header.burger.open')}
               title={translate('header.burger.open')}
               type="button"

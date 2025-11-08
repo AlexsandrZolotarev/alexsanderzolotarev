@@ -9,8 +9,11 @@
 .visually-hidden {
   @include visually-hidden;
 }
-.accent-color{
+.accent-color {
   color: var(--color-purple-10);
+}
+.gold-color {
+  color: var(--color-gold);
 }
 .hidden-mobile {
   @include mobile {
@@ -27,6 +30,6 @@
     display: none !important;
   }
 }
-.preview{
+.preview {
   position: absolute;
 }

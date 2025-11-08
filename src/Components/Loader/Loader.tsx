@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLang } from '../../hooks/useLang';
+import { useAppReady } from '../../hooks/useAppReady';
 
 type LoaderProps = {
   delay: number;
@@ -7,6 +8,7 @@ type LoaderProps = {
 
 const Loader: React.FC<LoaderProps> = ({ delay }) => {
   const refSvg = useRef<SVGSVGElement | null>(null);
+  const { setAppReady } = useAppReady();
   const { translate } = useLang();
   const [done, setDone] = useState(false);
   useLayoutEffect(() => {
@@ -39,7 +41,10 @@ const Loader: React.FC<LoaderProps> = ({ delay }) => {
   }, []);
   useEffect(() => {
     const id = window.setTimeout(() => setDone(true), delay - 700);
-    return () => window.clearTimeout(id);
+    return () => {
+      setAppReady(true);
+      window.clearTimeout(id);
+    };
   }, [delay]);
 
   return (

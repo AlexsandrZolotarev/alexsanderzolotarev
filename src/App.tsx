@@ -5,12 +5,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/main.scss';
 import ThemeProvider from './theme/ThemeProvider';
 import LangProvider from './lang/LangProvider';
+import { AppReadyProvider } from './Providers/AppReadyProvider';
 
 const DELAY: number = 3000;
 
 const lazyWithDelay = <T extends React.ComponentType<any>>(
   importer: () => Promise<{ default: T }>,
-  delay = 3000,
 ) =>
   lazy(() => Promise.all([importer(), new Promise((r) => setTimeout(r, DELAY))]).then(([m]) => m));
 
@@ -24,15 +24,17 @@ const App = () => {
     <BrowserRouter>
       <LangProvider>
         <ThemeProvider>
-          <Suspense fallback={<Loader delay={DELAY} />}>
-            <Routes>
-              <Route element={<Layout />}>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="*" element={<ErrorPage />} />
-              </Route>
-            </Routes>
-          </Suspense>
+          <AppReadyProvider>
+            <Suspense fallback={<Loader delay={DELAY} />}>
+              <Routes>
+                <Route element={<Layout />}>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/projects" element={<ProjectsPage />} />
+                  <Route path="*" element={<ErrorPage />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </AppReadyProvider>
         </ThemeProvider>
       </LangProvider>
     </BrowserRouter>

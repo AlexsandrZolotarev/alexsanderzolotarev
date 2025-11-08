@@ -28,19 +28,52 @@
     justify-content: center;
   }
   &__title {
+    text-align: center;
     h1 {
       margin: 0;
-      text-align: center;
     }
   }
-
-  &__subtitle * {
-    margin: 0;
+  &__item * {
+    @include mobile {
+      margin: 0;
+    }
+  }
+  &__subtitle {
+    @include anim-sd;
+    animation-duration: 1.3s;
+    * {
+      margin: 0;
+    }
   }
 
   &__actions {
     display: flex;
     margin-top: rem(20);
     gap: 1.5rem;
+    @include anim-sd;
+    animation-duration: 1.3s;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__name {
+    @include anim-sd;
+    animation-duration: 1s;
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &__callme {
+    @include anim-sd;
+    animation-duration: 1.2s;
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }

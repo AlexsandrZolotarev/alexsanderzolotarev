@@ -46,8 +46,9 @@ h6,
 
 h1,
 .h1 {
-  @include fluid-text(50, 30);
+  @include fluid-text(50, 23);
   font-weight: 700;
+  line-height: 1.4;
 }
 
 h2,
