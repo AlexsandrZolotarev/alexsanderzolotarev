@@ -18,6 +18,7 @@
     svg {
       width: rem(50);
       @include hover {
+        stroke-width: 3px;
         color: var(--color-purple-10);
       }
     }

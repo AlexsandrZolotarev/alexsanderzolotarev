@@ -18,8 +18,8 @@
   "hero.title.callme": "Но вы можете называть меня ",
   "hero.title.gold": "Золотом",
   "hero.subtitle": "Я фронтенд-разработчик",
-  "hero.links.projects": "смотреть мои проекты",
-  "hero.links.about": "подробнее обо мне",
+  "hero.links.projects": "→ смотреть мои проекты",
+  "hero.links.about": "→ подробнее обо мне",
 
   "footer.designed": "Дизайн и разработка — Александр © 2025"
 }

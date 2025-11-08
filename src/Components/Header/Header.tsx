@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Logo from '../../images/logo.svg?react';
-
 import Sun from '../../images/Header/Sun.svg?react';
 import Moon from '../../images/Header/Moon.svg?react';
 import { useTheme } from '../../hooks/useTheme';

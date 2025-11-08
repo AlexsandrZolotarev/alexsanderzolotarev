@@ -8,7 +8,7 @@
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  z-index: 9999;
+  z-index: -1;
   transform: translate(-50%, -50%);
   opacity: 0;
   will-change: transform, left, top, opacity, scale;
@@ -21,7 +21,7 @@
   left: 50%;
   border-radius: 50%;
   z-index: 9999;
-  transform: translate(-33%, -33%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   will-change: transform, left, top, opacity, scale;
   mix-blend-mode: multiply;
@@ -29,14 +29,17 @@
 .cursorDot {
   width: 4px;
   height: 4px;
-  background-color: #606887;
+  background-color: currentColor;
 }
 
 .cursorRing {
   width: 24px;
   height: 24px;
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid #606887;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease;
 }
 
 @media (hover: none), (pointer: coarse) {

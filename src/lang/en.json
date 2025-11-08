@@ -17,8 +17,8 @@
   "hero.title.callme": "But you can call me ",
   "hero.title.gold": "Gold",
   "hero.subtitle": "I’m a front-end web developer",
-  "hero.links.projects": "see my projects",
-  "hero.links.about": "more about me",
+  "hero.links.projects": "→ see my projects",
+  "hero.links.about": "→ more about me",
 
   "footer.designed": "Designed and coded by Alex © 2025"
 }

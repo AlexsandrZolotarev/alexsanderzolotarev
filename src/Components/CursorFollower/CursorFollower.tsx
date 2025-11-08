@@ -54,8 +54,46 @@ export default function CursorFollower() {
   }, []);
 
   useEffect(() => {
-    const down = () => ringRef.current && (ringRef.current.style.scale = '0.85');
-    const up = () => ringRef.current && (ringRef.current.style.scale = '1.5');
+    const ring = ringRef.current;
+    if (!ring) return;
+
+    const handleEnter = () => {
+      if (dotRef.current) dotRef.current.style.opacity = '0';
+      ring.style.width = '50px';
+      ring.style.height = '50px';
+    };
+    const handleLeave = () => {
+      if (dotRef.current) dotRef.current.style.opacity = '1';
+      ring.style.width = '24px';
+      ring.style.height = '24px';
+    };
+    const interactive = document.querySelectorAll('.accent-color, a, button, .hover-target');
+
+    interactive.forEach((el) => {
+      el.addEventListener('mouseenter', handleEnter);
+      el.addEventListener('mouseleave', handleLeave);
+    });
+
+    return () => {
+      interactive.forEach((el) => {
+        el.removeEventListener('mouseenter', handleEnter);
+        el.removeEventListener('mouseleave', handleLeave);
+      });
+    };
+  }, []);
+  useEffect(() => {
+    const down = () => {
+      if (ringRef.current) {
+        ringRef.current.style.width = '50px';
+        ringRef.current.style.height = '50px';
+      }
+    };
+    const up = () => {
+      if (ringRef.current) {
+        ringRef.current.style.width = '24px';
+        ringRef.current.style.height = '24px';
+      }
+    };
     window.addEventListener('pointerdown', down);
     window.addEventListener('pointerup', up);
     return () => {
