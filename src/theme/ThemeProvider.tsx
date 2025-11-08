@@ -1,4 +1,4 @@
-import { createContext, JSX, useEffect, useState } from 'react';
+import { createContext, JSX, useLayoutEffect, useState } from 'react';
 import { Theme, ThemeCntx } from '../types/Theme';
 
 export const ThemeContext = createContext<ThemeCntx | null>(null);
@@ -8,7 +8,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }): JSX.Element
     const saved = localStorage.getItem('theme');
     return saved === 'light' ? 'light' : 'dark';
   });
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (theme) document.documentElement.dataset.theme = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);

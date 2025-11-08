@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
+import { useLang } from '../../hooks/useLang';
 
 const Hero = () => {
+  const { translate } = useLang();
   return (
     <section className="hero section" aria-labelledby="hero-title" id="About">
       <div className="hero__inner container">
@@ -8,29 +10,31 @@ const Hero = () => {
           <div className="hero__title">
             <h1>
               <div>
-                HI! I’m <span className="accent-color">Aleksander Zolotarev.</span>
+                {translate('hero.title.myname')}
+                <span className="accent-color"> {translate('hero.title.name')}</span>
               </div>
               <div>
-                But you can call me <span className="accent-color">Gold</span>
+                {translate('hero.title.callme')}
+                <span className="accent-color">{translate('hero.title.gold')}</span>
               </div>
             </h1>
           </div>
           <div className="hero__subtitle">
-            <h4>I’m a front-end web developer</h4>
+            <h4>{translate('hero.subtitle')}</h4>
           </div>
 
           <ul className="hero__actions">
             <li className="hero__item">
               <h5>
                 <NavLink to="/projects" className="hero__link">
-                  see my projects
+                  {translate('hero.links.projects')}
                 </NavLink>
               </h5>
             </li>
             <li className="hero__item">
               <h5>
                 <NavLink to="/about-me" className="hero__link">
-                  more about me
+                  {translate('hero.links.about')}
                 </NavLink>
               </h5>
             </li>

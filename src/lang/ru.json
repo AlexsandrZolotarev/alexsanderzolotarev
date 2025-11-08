@@ -1,0 +1,25 @@
+{
+  "app.langCode": "ru",
+  "app.langName": "Русский",
+  "app.dir": "ltr",
+  "preloader.title": "Материализация фигур",
+  "preloader.footer": "Разработан и написан Александром © 2025",
+  "header.logo.title": "Домой",
+  "header.logo.aria": "Домой",
+  "header.menu.changeLanguage": "Сменить язык",
+  "header.menu.toggleTheme": "Переключить тему",
+  "header.menu.currentLang": "RU",
+  "header.contact": "Контакты",
+  "header.burger.open": "Открыть меню",
+  "header.burger.close": "Закрыть меню",
+
+  "hero.title.myname": "Привет! Я ",
+  "hero.title.name": "Александр Золотарев.",
+  "hero.title.callme": "Но вы можете называть меня ",
+  "hero.title.gold": "Золотом",
+  "hero.subtitle": "Я фронтенд-разработчик",
+  "hero.links.projects": "смотреть мои проекты",
+  "hero.links.about": "подробнее обо мне",
+
+  "footer.designed": "Дизайн и разработка — Александр © 2025"
+}

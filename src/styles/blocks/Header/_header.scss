@@ -72,6 +72,7 @@
       gap: rem(16);
     }
     &-item {
+      display: flex;
       button {
         background-color: transparent;
         border: none;
@@ -79,6 +80,7 @@
     }
     &-lang {
       color: currentColor;
+      cursor: pointer;
     }
     &-theme {
       position: relative;

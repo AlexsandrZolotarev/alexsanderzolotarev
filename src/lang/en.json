@@ -1,0 +1,24 @@
+{
+  "app.langCode": "en",
+  "app.langName": "English",
+  "app.dir": "ltr",
+  "preloader.title": "Materializing shapes",
+  "preloader.footer": "Designed and coded by Alex © 2025",
+  "header.logo.title": "Home",
+  "header.logo.aria": "Home",
+  "header.menu.changeLanguage": "Change language",
+  "header.menu.toggleTheme": "Toggle theme",
+  "header.menu.currentLang": "EN",
+  "header.contact": "Contacts",
+  "header.burger.open": "Open menu",
+  "header.burger.close": "Close menu",
+  "hero.title.myname": "HI! I’m",
+  "hero.title.name": "Aleksander Zolotarev.",
+  "hero.title.callme": "But you can call me ",
+  "hero.title.gold": "Gold",
+  "hero.subtitle": "I’m a front-end web developer",
+  "hero.links.projects": "see my projects",
+  "hero.links.about": "more about me",
+
+  "footer.designed": "Designed and coded by Alex © 2025"
+}

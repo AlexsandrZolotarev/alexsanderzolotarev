@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLang } from '../../hooks/useLang';
 
 type LoaderProps = {
   delay: number;
@@ -6,6 +7,7 @@ type LoaderProps = {
 
 const Loader: React.FC<LoaderProps> = ({ delay }) => {
   const refSvg = useRef<SVGSVGElement | null>(null);
+  const { translate } = useLang();
   const [done, setDone] = useState(false);
   useLayoutEffect(() => {
     if (refSvg.current) {
@@ -80,14 +82,14 @@ const Loader: React.FC<LoaderProps> = ({ delay }) => {
           </svg>
         </div>
         <div className="preloader__title">
-          Materializing shapes
+          {translate('preloader.title')}
           <span className="preloader__title-dot">.</span>
           <span className="preloader__title-dot">.</span>
           <span className="preloader__title-dot">.</span>
         </div>
       </div>
       <div className="preloader__footer">
-        <div className="preloader__footer-title">Designed and coded by Alex © 2025</div>
+        <div className="preloader__footer-title">{translate('preloader.footer')}</div>
       </div>
     </div>
   );

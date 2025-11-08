@@ -4,13 +4,11 @@ import Logo from '../../images/logo.svg?react';
 import Sun from '../../images/Header/Sun.svg?react';
 import Moon from '../../images/Header/Moon.svg?react';
 import { useTheme } from '../../hooks/useTheme';
+import { useLang } from '../../hooks/useLang';
 
-const TRANSLATE = {
-  RU: 'RU',
-  EN: 'EN',
-};
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { lang, toggleLang, translate } = useLang();
   let [isActive, setIsActive] = useState<'' | ' is-active'>('');
   let onBurgerButtonClick = () => {
     document.documentElement.classList.toggle('is-lock');
@@ -23,7 +21,12 @@ const Header = () => {
     <header className="header">
       <div className="header__body">
         <div className="header__body-inner container">
-          <a href="/" className="header__logo" title="Home" aria-label="Home">
+          <a
+            href="/"
+            className="header__logo"
+            title={translate('header.logo.title')}
+            aria-label={translate('header.logo.aria')}
+          >
             <Logo aria-hidden="true" />
           </a>
           <div className="header__controls">
@@ -31,12 +34,12 @@ const Header = () => {
               <ul className="header__menu-list">
                 <li className="header__menu-item">
                   <button
-                    onClick={() => {}}
+                    onClick={() => toggleLang()}
                     type="button"
                     className="header__menu-lang"
-                    aria-label="Change language"
+                    aria-label={translate('header.menu.changeLanguage')}
                   >
-                    {theme ? `${TRANSLATE.EN}` : `${TRANSLATE.RU}`}
+                    {lang.toUpperCase()}
                   </button>
                 </li>
                 <li className="header__menu-item">
@@ -44,7 +47,7 @@ const Header = () => {
                     onClick={() => toggleTheme()}
                     type="button"
                     className="header__menu-theme"
-                    aria-label="Toggle theme"
+                    aria-label={translate('header.menu.toggleTheme')}
                   >
                     <span key={theme} className="header__menu-icon">
                       {theme === 'dark' ? <Moon /> : <Sun />}
@@ -61,13 +64,13 @@ const Header = () => {
                   !isActive || isActiveOnChange();
                 }}
               >
-                Contacts
+                {translate('header.contact')}
               </a>
             </div>
             <button
               className={'header__burger-button burger-button visible-tablet' + isActive}
-              aria-label="Open menu"
-              title="Open menu"
+              aria-label={translate('header.burger.open')}
+              title={translate('header.burger.open')}
               type="button"
               onClick={isActiveOnChange}
             >

@@ -10,11 +10,16 @@
     <div id="root"></div>
     <script type="module">
       const theme = localStorage.getItem('theme');
+      const lang = localStorage.getItem('lang');
       if (theme) {
         document.documentElement.dataset.theme = theme;
       } else {
         const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+      }
+      if (!lang) {
+        const isLang = navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en';
+        document.documentElement.dataset.lang = isLang ? 'ru' : 'en';
       }
     </script>
     <script type="module" src="/src/main.tsx"></script>
