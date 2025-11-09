@@ -1,7 +1,6 @@
-import { createContext, JSX, useLayoutEffect, useState } from 'react';
-import { Theme, ThemeCntx } from '../types/Theme';
-
-export const ThemeContext = createContext<ThemeCntx | null>(null);
+import { JSX, useLayoutEffect, useState } from 'react';
+import { Theme } from '../types/Theme';
+import { ThemeContext } from './ThemeContext';
 
 function ThemeProvider({ children }: { children: React.ReactNode }): JSX.Element {
   const [theme, setTheme] = useState<Theme>(() => {

@@ -1,7 +1,6 @@
-import { createContext, JSX, useEffect, useMemo, useState } from 'react';
-import { Lang, LangCntx, Messages } from '../types/Lang';
-
-export const LangContext = createContext<LangCntx | null>(null);
+import type { Lang, LangCntx, Messages } from '@/types/Lang';
+import { useEffect, useMemo, useState, type JSX } from 'react';
+import { LangContext } from './LangContext';
 
 function detectInitialLang(): Lang {
   const ls = localStorage.getItem('lang');
@@ -21,7 +20,7 @@ function LangProvider({ children }: { children: React.ReactNode }): JSX.Element 
       try {
         const mod =
           lang === 'ru' ? await import('../lang/ru.json') : await import('../lang/en.json');
-        const messages: Messages = (mod as any).default ?? mod;
+        const messages: Messages = mod.default ?? mod;
 
         if (!isCancelled) {
           setDict(messages);

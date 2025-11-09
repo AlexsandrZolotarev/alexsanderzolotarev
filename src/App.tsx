@@ -9,7 +9,7 @@ import { AppReadyProvider } from './Providers/AppReadyProvider';
 
 const DELAY: number = 3000;
 
-const lazyWithDelay = <T extends React.ComponentType<any>>(
+const lazyWithDelay = <T extends React.ComponentType<object>>(
   importer: () => Promise<{ default: T }>,
 ) =>
   lazy(() => Promise.all([importer(), new Promise((r) => setTimeout(r, DELAY))]).then(([m]) => m));

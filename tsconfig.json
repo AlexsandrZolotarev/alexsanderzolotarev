@@ -2,14 +2,30 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "lib": ["DOM", "ESNext"], 
-    "moduleResolution": "node",
+
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "./build",
+    "incremental": true,
+    "noEmit": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    "types": ["vite/client", "vitest"]
   },
- "include": ["src", "src/types"]
+  "include": ["src", "src/types"],
+  "exclude": ["node_modules", "dist", "build"]
 }
