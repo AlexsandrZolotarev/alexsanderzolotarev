@@ -44,6 +44,9 @@
     * {
       margin: 0;
     }
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
   }
 
   &__actions {
@@ -55,6 +58,9 @@
     @include mobile {
       flex-direction: column;
     }
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
   }
   &__name {
     @include anim-sd;
@@ -65,6 +71,9 @@
       align-items: center;
       flex-direction: column;
     }
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
   }
   &__callme {
     @include anim-sd;
@@ -74,6 +83,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+    }
+    &.is-active {
+      animation: var(--animation-upFade);
     }
   }
 }
