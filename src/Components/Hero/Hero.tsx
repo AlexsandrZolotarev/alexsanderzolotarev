@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useLang } from '../../hooks/useLang';
 import { useAppReady } from '../../hooks/useAppReady';
+import { useAppSelector } from '../../Redux/hooks';
 
 const Hero = () => {
+  const isTextVisible = useAppSelector((state) => state.heroVisibilitySlice.isTextVisible);
   const { translate } = useLang();
   const { appReady } = useAppReady();
 
@@ -12,21 +14,29 @@ const Hero = () => {
         <div className="hero__body">
           <div className="hero__title">
             <h1>
-              <div className={`hero__name ${appReady ? 'is-animate' : ''}`}>
+              <div
+                className={`hero__name ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
+              >
                 {translate('hero.title.myname')}
                 <span className="accent-color"> {translate('hero.title.name')}</span>
               </div>
-              <div className={`hero__callme ${appReady ? 'is-animate' : ''}`}>
+              <div
+                className={`hero__callme ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
+              >
                 {translate('hero.title.callme')}
                 <span className="gold-color">{translate('hero.title.gold')}</span>
               </div>
             </h1>
           </div>
-          <div className={`hero__subtitle ${appReady ? 'is-animate' : ''}`}>
+          <div
+            className={`hero__subtitle ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
+          >
             <h4>{translate('hero.subtitle')}</h4>
           </div>
 
-          <ul className={`hero__actions ${appReady ? 'is-animate' : ''}`}>
+          <ul
+            className={`hero__actions ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
+          >
             <li className="hero__item">
               <h5>
                 <NavLink to="/projects" className="hero__link">

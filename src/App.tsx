@@ -6,6 +6,8 @@ import './styles/main.scss';
 import ThemeProvider from './theme/ThemeProvider';
 import LangProvider from './lang/LangProvider';
 import { AppReadyProvider } from './Providers/AppReadyProvider';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 
 const DELAY: number = 3000;
 
@@ -21,23 +23,25 @@ const Layout = lazyWithDelay(() => import('./Components/Layout/Layout'));
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <LangProvider>
-        <ThemeProvider>
-          <AppReadyProvider>
-            <Suspense fallback={<Loader delay={DELAY} />}>
-              <Routes>
-                <Route element={<Layout />}>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/projects" element={<ProjectsPage />} />
-                  <Route path="*" element={<ErrorPage />} />
-                </Route>
-              </Routes>
-            </Suspense>
-          </AppReadyProvider>
-        </ThemeProvider>
-      </LangProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <LangProvider>
+          <ThemeProvider>
+            <AppReadyProvider>
+              <Suspense fallback={<Loader delay={DELAY} />}>
+                <Routes>
+                  <Route element={<Layout />}>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
+                    <Route path="*" element={<ErrorPage />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </AppReadyProvider>
+          </ThemeProvider>
+        </LangProvider>
+      </BrowserRouter>
+    </Provider>
   );
 };
 export default App;
