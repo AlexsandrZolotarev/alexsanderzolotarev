@@ -67,6 +67,11 @@
   transform: translateY(-30px);
   animation: var(--animation-sd);
 }
+@mixin anim-up() {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: var(--animation-upFade);
+}
 
 @mixin visually-hidden {
   position: absolute !important;

@@ -1,0 +1,111 @@
+@use '../../helpers/' as *;
+
+.projects {
+  &__body {
+    height: 100%;
+    padding-top: rem(150);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(40);
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      padding-top: rem(20);
+    }
+  }
+  &__works {
+    display: flex;
+    flex-direction: column;
+    padding-right: var(--container-padding-x);
+    &-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      border-bottom: var(--border);
+      border-width: 2px;
+      border-image: var(--border-image);
+
+      &[data-state='enter'] {
+        @include anim-sd;
+      }
+      &[data-state='exit'] {
+        @include anim-up;
+      }
+    }
+    &-title {
+      @include fluid-text(50, 40);
+      margin-bottom: rem(15);
+    }
+    @include tablet {
+      padding-inline: rem(24);
+    }
+  }
+  &__list {
+    display: grid;
+    &[data-state='enter'] .projects__item {
+      @include anim-sd;
+      animation-delay: calc(var(--i, 0) * 90ms);
+    }
+    &[data-state='exit'] .projects__item {
+      @include anim-up;
+      animation-delay: calc(var(--i, 0) * 70ms);
+    }
+  }
+  &__item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    text-transform: lowercase;
+    overflow: hidden;
+    border-bottom: var(--border);
+    border-width: 2px;
+    border-image: var(--border-image);
+    * {
+      transition: transform 0.3s ease;
+      margin: 0;
+      @include fluid-text(30, 16);
+    }
+    &-arrow {
+      padding-right: 0.5em;
+      transform: translateX(-1.5em);
+    }
+    &-text {
+      margin-block: rem(15);
+      transform: translateX(-1em);
+    }
+    @include hover {
+      h3 {
+        transform: translateX(0em);
+      }
+    }
+  }
+  &__preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: rem(0) rem(48) rem(0) rem(0);
+    @include tablet {
+      display: none;
+    }
+    &-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      transform: scale(1.01);
+      transition:
+        opacity 0.6s ease,
+        transform 0.8s ease;
+      &.is-visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}

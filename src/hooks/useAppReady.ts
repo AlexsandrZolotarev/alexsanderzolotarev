@@ -1,5 +1,5 @@
+import { ContextAppReady } from '@/Providers/ContextAppReady';
 import { useContext } from 'react';
-import { ContextAppReady } from '../Providers/AppReadyProvider';
 
 export function useAppReady() {
   const ctx = useContext(ContextAppReady);

@@ -1,7 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLang } from '../../hooks/useLang';
 import { useAppReady } from '../../hooks/useAppReady';
-
 type LoaderProps = {
   delay: number;
 };
@@ -13,7 +12,7 @@ const Loader: React.FC<LoaderProps> = ({ delay }) => {
   const [done, setDone] = useState(false);
   useLayoutEffect(() => {
     if (refSvg.current) {
-      Array.from(refSvg.current.children).forEach((item, index) => {
+      Array.from(refSvg.current.children).forEach((item) => {
         const path = item.querySelector('path');
         const circle = item?.querySelector('circle');
 
@@ -45,7 +44,7 @@ const Loader: React.FC<LoaderProps> = ({ delay }) => {
       setAppReady(true);
       window.clearTimeout(id);
     };
-  }, [delay]);
+  }, [delay, setAppReady]);
 
   return (
     <div

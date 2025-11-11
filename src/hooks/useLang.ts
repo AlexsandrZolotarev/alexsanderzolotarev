@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import type { LangCntx } from '@/types/Lang';
 import { LangContext } from '@/lang/LangContext';
+import { LangCntx } from '@/types/Lang';
+import { useContext } from 'react';
 
 export function useLang(): LangCntx {
   const ctx = useContext(LangContext);

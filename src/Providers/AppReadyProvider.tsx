@@ -1,7 +1,5 @@
-import { createContext, useMemo, useState } from 'react';
-import { AppReadyCtx } from '../types/AppReady';
-
-export const ContextAppReady = createContext<AppReadyCtx | null>(null);
+import { useMemo, useState } from 'react';
+import { ContextAppReady } from './ContextAppReady';
 
 export const AppReadyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [appReady, setAppReady] = useState(false);

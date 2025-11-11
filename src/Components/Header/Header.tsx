@@ -16,13 +16,14 @@ const Header = () => {
 
   const { theme, toggleTheme } = useTheme();
   const { lang, toggleLang, translate } = useLang();
-  let [isActive, setIsActive] = useState<'' | ' is-active'>('');
-  let onBurgerButtonClick = () => {
+  const [isActive, setIsActive] = useState<'' | ' is-active'>('');
+  const onBurgerButtonClick = () => {
     document.documentElement.classList.toggle('is-lock');
   };
-  let isActiveOnChange = () => {
+  const isActiveOnChange = () => {
     dispatch(toggleVisible());
-    isActive ? setIsActive('') : setIsActive(' is-active');
+    if (isActive) setIsActive('');
+    else setIsActive(' is-active');
     onBurgerButtonClick();
   };
   return (
@@ -31,13 +32,13 @@ const Header = () => {
         <div className="header__body-inner container">
           <NavLink
             to="/"
-            className={`header__logo ${appReady && 'is-animate'}`}
+            className={`header__logo ${appReady ? ' is-animate' : ''}`}
             title={translate('header.logo.title')}
           >
             <span className="visually-hidden">{translate('header.logo.title')}</span>
             <Logo aria-hidden="true" focusable="false" />
           </NavLink>
-          <div className={`header__controls ${appReady && 'is-animate'}`}>
+          <div className={`header__controls ${appReady ? ' is-animate' : ''}`}>
             <nav className="header__menu" aria-label={translate('header.menu.navigation')}>
               <ul className="header__menu-list">
                 <li className="header__menu-item">
@@ -92,7 +93,10 @@ const Header = () => {
             <ul
               className="header__overlay-list"
               onClick={(event) => {
-                if ((event.target as HTMLElement).closest('a')) !isActive || isActiveOnChange();
+                const link = (event.target as HTMLElement).closest('a');
+                if (link && isActive) {
+                  isActiveOnChange();
+                }
               }}
             >
               <li className={`header__overlay-item ${isTextVisible ? 'is-active' : 'is-lock'}`}>

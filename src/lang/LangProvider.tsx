@@ -1,5 +1,5 @@
 import type { Lang, LangCntx, Messages } from '@/types/Lang';
-import { useEffect, useMemo, useState, type JSX } from 'react';
+import { useCallback, useEffect, useMemo, useState, type JSX } from 'react';
 import { LangContext } from './LangContext';
 
 function detectInitialLang(): Lang {
@@ -43,15 +43,17 @@ function LangProvider({ children }: { children: React.ReactNode }): JSX.Element 
     setLang((prev) => (prev === 'ru' ? 'en' : 'ru'));
   }
 
-  function translate(key: string, params?: Record<string, string | number>): string {
-    const source = dict?.[key] ?? key;
-    if (!params) return source;
-    return Object.keys(params).reduce((acc, k) => {
-      const val = String(params[k]);
-      return acc.replaceAll(`{${k}}`, val);
-    }, source);
-  }
-
+  const translate = useCallback(
+    (key: string, params?: Record<string, string | number>): string => {
+      const source = dict?.[key] ?? key;
+      if (!params) return source;
+      return Object.keys(params).reduce((acc, k) => {
+        const val = String(params[k]);
+        return acc.replaceAll(`{${k}}`, val);
+      }, source);
+    },
+    [dict],
+  );
   const value = useMemo<LangCntx>(
     () => ({
       lang,
@@ -60,7 +62,7 @@ function LangProvider({ children }: { children: React.ReactNode }): JSX.Element 
       translate,
       dict,
     }),
-    [lang, dict],
+    [lang, dict, translate],
   );
 
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;

@@ -16,16 +16,15 @@
 @use './blocks/grid';
 @use './blocks/clipPathGroup';
 @use './blocks/lights';
-@use './blocks/title';
 @use './blocks/baseline';
+@use './blocks/logo';
 
 @use './blocks/Skills/tabs';
 @use './blocks/Skills/list';
 @use './blocks/Loader/loader';
 
-@use './blocks/Portfolio/portfolio';
-@use './blocks/Portfolio/card';
-@use './blocks/Portfolio/stack';
+@use './blocks/Projects/stack';
+@use './blocks/Projects/projects';
 
 @use './blocks/FancyBox/fancyBox';
 
