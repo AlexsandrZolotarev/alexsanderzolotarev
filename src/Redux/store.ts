@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import heroVisibilitySlice from './heroVisibilitySlice';
+import visibilitySlice from './visibilitySlice';
 
 export const store = configureStore({
-  reducer: { heroVisibilitySlice },
+  reducer: { visibilitySlice },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

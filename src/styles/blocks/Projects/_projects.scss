@@ -10,13 +10,16 @@
     @include tablet {
       display: flex;
       flex-direction: column;
-      padding-top: rem(20);
+      justify-content: flex-end;
+      padding-top: rem(120);
     }
   }
   &__works {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     padding-right: var(--container-padding-x);
+    padding-bottom: rem(50);
     &-header {
       display: flex;
       flex-direction: row;
@@ -40,6 +43,7 @@
     }
     @include tablet {
       padding-inline: rem(24);
+      margin-bottom: rem(30);
     }
   }
   &__list {
@@ -74,12 +78,20 @@
     }
     &-text {
       margin-block: rem(15);
+      @include tablet {
+        margin-block: rem(24);
+      }
       transform: translateX(-1em);
     }
     @include hover {
-      h3 {
+      h4 {
         transform: translateX(0em);
+        font-weight: bolder;
       }
+    }
+    &-inner {
+      display: flex;
+      align-items: center;
     }
   }
   &__preview {

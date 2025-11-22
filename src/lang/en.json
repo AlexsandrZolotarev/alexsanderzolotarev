@@ -29,6 +29,39 @@
   "hero.subtitle": "I’m a front-end web developer",
   "hero.links.projects": "→ see my projects",
   "hero.links.about": "→ more about me",
+  "footer.designed": "Designed and coded by Alex © 2025",
 
-  "footer.designed": "Designed and coded by Alex © 2025"
+  "project.label.category": "CATEGORY",
+  "project.label.year": "YEAR",
+  "project.nextProject": "NEXT PROJECT",
+
+  "project.master-blacksmith.title": "Master Blacksmith",
+  "project.master-blacksmith.category": "Frontend",
+  "project.master-blacksmith.year": "2022",
+  "project.master-blacksmith.description": "Master Blacksmith - is a promo website for a blacksmith workshop. The page showcases various types of metal structures: from canopies and gazebos to fences and decorative elements. I focused on a clean structure, convenient navigation, and large visual blocks so that users can quickly browse products, choose the right category, and submit a request for manufacturing.",
+
+  "project.rivo-agency.title": "Rivo Agency",
+  "project.rivo-agency.category": "Frontend",
+  "project.rivo-agency.year": "2022",
+  "project.rivo-agency.description": "A multi-page website for a creative digital agency. In this project I started working with the React library: implemented functional and class components, routing with BrowserRouter, and navigation logic. Forms are handled with Formik. The layout is recreated from Figma with pixel-perfect precision.",
+
+  "project.future-tech.title": "Future Tech",
+  "project.future-tech.category": "Frontend",
+  "project.future-tech.year": "2023",
+  "project.future-tech.description": "A multi-page website built from a Figma layout. The markup follows the BEM methodology. I use the Sass (SCSS) preprocessor, modular styles, and adaptive rem units. Additional JavaScript logic is responsible for interactive elements and smooth user experience.",
+
+  "project.four-horses-club.title": "Four Horses Club",
+  "project.four-horses-club.category": "Frontend",
+  "project.four-horses-club.year": "2022",
+  "project.four-horses-club.description": "An adaptive landing page with clean semantics and BEM markup. The project uses the Sass (SCSS) preprocessor, modular style structure, and adaptive rem-based typography. There is a lot of JavaScript: smooth anchor scrolling, a running line, a carousel of participants with pagination, stage-switch tabs, and state management through data attributes. Accessibility is implemented with ARIA roles, aria-live regions, and lazy-loaded images.",
+
+  "project.hydra.title": "Hydra",
+  "project.hydra.category": "Frontend",
+  "project.hydra.year": "2021",
+  "project.hydra.description": "A landing page with a futuristic design and neon accents. Built with SCSS, a modular structure, and responsive typography. Includes interactive sections, animated blocks, and smooth transitions between content sections.",
+
+  "project.celestia.title": "Celestia",
+  "project.celestia.category": "Frontend",
+  "project.celestia.year": "2024",
+  "project.celestia.description": "A cosmic-themed landing with neon gradients and deep space atmosphere. The layout is built with SCSS and adaptive typography. The page uses glowing gradients, starry backgrounds, and smooth animated transitions between sections to create a futuristic space mood."
 }

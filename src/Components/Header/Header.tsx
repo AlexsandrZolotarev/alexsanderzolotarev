@@ -6,11 +6,11 @@ import { useTheme } from '../../hooks/useTheme';
 import { useLang } from '../../hooks/useLang';
 import { useAppReady } from '../../hooks/useAppReady';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
-import { toggleVisible } from '../../Redux/heroVisibilitySlice';
+import { toggleVisible } from '../../Redux/visibilitySlice';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const isTextVisible = useAppSelector((state) => state.heroVisibilitySlice.isTextVisible);
+  const isTextVisible = useAppSelector((state) => state.visibilitySlice.isTextVisible);
   const dispatch = useAppDispatch();
   const { appReady } = useAppReady();
 

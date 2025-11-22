@@ -1,0 +1,178 @@
+@use '../../helpers' as *;
+
+.project {
+  width: 100%;
+  height: 100%;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+
+    @include tablet-above {
+      padding-inline: rem(250);
+    }
+    @include mobile {
+      padding-inline: rem(24);
+    }
+  }
+  &__image-wrapper {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    @include mobile {
+      height: 100%;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    img {
+      position: absolute;
+      inset: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 0 0 rem(48) rem(48);
+      color: transparent;
+      object-fit: cover;
+      @include mobile {
+        position: relative;
+        border-radius: rem(24) rem(24);
+      }
+    }
+    @include mobile {
+      margin-top: rem(140);
+    }
+    @include tablet {
+      padding-inline: 0;
+    }
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+  }
+
+  &__body {
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    @include tablet {
+      padding-inline: rem(24);
+    }
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+  }
+  &__title {
+    position: relative;
+    border-bottom: 2px solid var(--color-text);
+    margin-top: rem(30);
+    padding-bottom: rem(30);
+    text-transform: uppercase;
+    * {
+      font-family: 'ManropeVar';
+      font-weight: 800;
+      font-variation-settings:
+        'wght' 800,
+        'wdth' 1205;
+
+      @include fluid-text(50, 30);
+    }
+  }
+  &__intro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: rem(20);
+    margin-top: rem(30);
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cell {
+    vertical-align: top;
+    padding: 0 rem(24) rem(24) 0;
+    h4 {
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: bolder;
+      font-family: var(--font-family-variable);
+      font-variation-settings:
+        'wght' 800,
+        'wdth' 125;
+    }
+  }
+  &__description {
+    @include fluid-text(20, 14);
+  }
+  &__footer {
+    text-transform: uppercase;
+    font-weight: bolder;
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 1.3s;
+    @include tablet {
+      padding-inline: rem(24);
+    }
+    &.is-active {
+      animation-delay: 2s;
+      animation: var(--animation-upFade);
+    }
+  }
+  &__footer-link {
+    display: flex;
+    align-items: center;
+    margin-block: rem(80);
+    padding-block: rem(25);
+    justify-content: space-between;
+    border-top: 2px solid var(--color-text);
+    text-transform: uppercase;
+    overflow: hidden;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25em;
+      margin: 0;
+      font-weight: bolder;
+      @include fluid-text(20, 14);
+      font-family: var(--font-family-variable);
+      font-variation-settings:
+        'wght' 800,
+        'wdth' 125;
+    }
+
+    .project__footer-arrow,
+    .project__footer-text {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .project__footer-arrow {
+      padding-right: 0.5em;
+      transform: translateX(-1.5em);
+    }
+
+    .project__footer-text {
+      transform: translateX(-1.5em);
+    }
+
+    @include hover {
+      color: inherit;
+      .project__footer-arrow {
+        transform: translateX(0);
+      }
+      .project__footer-text {
+        transform: translateX(0);
+      }
+    }
+  }
+}

@@ -4,8 +4,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  border: var(--border);
-  border-image: var(--border-image);
+  border: none;
   padding: rem(10) rem(10);
   background-color: transparent;
   color: currentColor;

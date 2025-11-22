@@ -4,7 +4,7 @@ import { useAppReady } from '../../hooks/useAppReady';
 import { useAppSelector } from '../../Redux/hooks';
 
 const Hero = () => {
-  const isTextVisible = useAppSelector((state) => state.heroVisibilitySlice.isTextVisible);
+  const isTextVisible = useAppSelector((state) => state.visibilitySlice.isTextVisible);
   const { translate } = useLang();
   const { appReady } = useAppReady();
 

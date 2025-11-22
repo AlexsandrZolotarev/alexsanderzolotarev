@@ -13,6 +13,7 @@
   opacity: 0;
   will-change: transform, left, top, opacity, scale;
   mix-blend-mode: multiply;
+  z-index: 9999;
 }
 .cursorRing {
   position: fixed;

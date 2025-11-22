@@ -1,27 +1,31 @@
 @use '../../helpers/' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   font-size: rem(16);
   z-index: 100;
   top: 0;
   top: 0;
   color: currentColor;
   &__logo {
-    font-size: rem(20);
+    font-size: rem(30);
     display: flex;
     align-items: center;
     column-gap: rem(14);
     z-index: 1;
     stroke-width: 3px;
     svg {
-      width: rem(50);
+      width: rem(70);
       path {
         stroke: currentColor;
       }
       @include hover {
         stroke-width: 4px;
         color: var(--color-purple-10);
+      }
+      @include mobile {
+        width: rem(50);
       }
     }
     &.is-animate {
@@ -30,6 +34,7 @@
   }
   &__body {
     padding-top: rem(31);
+    @include fluid-text(20, 18);
     &-inner {
       display: flex;
       justify-content: space-between;
@@ -124,6 +129,8 @@
     &-lang {
       color: currentColor;
       cursor: pointer;
+      font-weight: bolder;
+      animation-duration: 1s;
     }
     &-theme {
       &:active .header__menu-icon {
