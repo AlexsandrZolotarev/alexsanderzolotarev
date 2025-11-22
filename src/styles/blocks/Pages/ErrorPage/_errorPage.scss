@@ -15,6 +15,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
   }
 
   &__title {

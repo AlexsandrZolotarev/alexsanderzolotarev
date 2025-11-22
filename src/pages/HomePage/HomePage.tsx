@@ -46,7 +46,7 @@ const HomePage = () => {
             </li>
             <li className="hero__item">
               <h5>
-                <NavLink to="/about-me" className="hero__link">
+                <NavLink to="/about" className="hero__link">
                   {translate('hero.links.about')}
                 </NavLink>
               </h5>

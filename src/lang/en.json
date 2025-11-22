@@ -74,5 +74,6 @@
   "about.mail.label": "Mail",
   "about.resume": "Resume",
 
-  "about.description": "Hi, my name is Alexander, and I'm a frontend developer passionate about design, interfaces and modern web technologies. I build responsive websites, complex UI animations, clean structured code and full-featured modern projects. I'm deeply interested in new technologies, clean architecture, and always learning tools that help improve both development quality and user experience."
+  "about.description": "Hi, my name is Alexander, and I'm a frontend developer passionate about design, interfaces and modern web technologies. I build responsive websites, complex UI animations, clean structured code and full-featured modern projects. I'm deeply interested in new technologies, clean architecture, and always learning tools that help improve both development quality and user experience.",
+  "error.link": "→ go back to home"
 }
