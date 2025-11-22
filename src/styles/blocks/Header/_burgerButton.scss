@@ -1,43 +1,175 @@
 @use '../../helpers/' as *;
 
 .burger-button {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(3);
   border: none;
-  padding: rem(10) rem(10);
   background-color: transparent;
   color: currentColor;
-  row-gap: rem(3);
+  width: rem(32);
+  height: rem(32);
+  padding: 0;
+
+  &__dot {
+    width: rem(8);
+    height: rem(8);
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--color-text);
+    transition:
+      opacity var(--transition-duration),
+      transform var(--transition-duration),
+      height var(--transition-duration);
+  }
+
   &__line {
-    background-color: currentColor;
-    width: rem(20);
-    height: rem(2);
-    border-radius: 1rem;
-    transition-duration: var(--transition-duration);
-    &:nth-child(2) {
-      width: 80%;
-      align-self: end;
-    }
-    &:last-child {
-      width: 55%;
-      align-self: end;
+    position: absolute;
+    border-radius: 4px;
+    @include abs-center;
+    width: rem(8);
+    height: rem(8);
+    border: 2px solid var(--color-text);
+    transition:
+      transform var(--transition-duration),
+      height var(--transition-duration);
+  }
+
+  &:not(.is-active) {
+    @include hover {
+      .burger-button__line:nth-child(5) {
+        animation: increaseHeight 0.1s ease forwards;
+        transform: rotate(90deg);
+      }
+      .burger-button__line:nth-child(6) {
+        animation: increaseHeight 0.1s ease forwards;
+        transform: rotate(0deg);
+      }
+      .burger-button__dot:nth-child(2) {
+        animation: dotUp 0.1s ease forwards;
+      }
+      .burger-button__dot:nth-child(4) {
+        animation: dotLeft 0.1s ease forwards;
+      }
+      .burger-button__dot:nth-child(8) {
+        animation: dotRight 0.1s ease forwards;
+      }
+      .burger-button__dot:nth-child(10) {
+        animation: dotDown 0.1s ease forwards;
+      }
+
+      .burger-button__dot:nth-child(7) {
+        animation: dotHide 0.1s ease forwards;
+      }
     }
   }
+
   &.is-active {
-    .burger-button__line {
-      &:first-child {
-        rotate: 45deg;
-        transform-origin: 0;
-        translate: 0.24rem -0.15rem;
+    .burger-button__dot {
+      animation: dotHide 0.1s ease forwards;
+    }
+    .burger-button__line:nth-child(5),
+    .burger-button__line:nth-child(6) {
+      animation: increaseHeightActive 0.1s ease forwards;
+    }
+    .burger-button__line:nth-child(5) {
+      transform: rotate(45deg);
+    }
+    .burger-button__line:nth-child(6) {
+      transform: rotate(-45deg);
+    }
+    @include hover {
+      .burger-button__line:nth-child(5) {
+        transform: rotate(0deg);
       }
-      &:nth-child(2) {
-        width: 100%;
-        rotate: -45deg;
+      .burger-button__line:nth-child(6) {
+        transform: rotate(90deg);
       }
-      &:last-child {
-        width: 0;
+      .burger-button__dot:nth-child(1),
+      .burger-button__dot:nth-child(3),
+      .burger-button__dot:nth-child(9),
+      .burger-button__dot:nth-child(11) {
+        animation: dotShow 0.1s ease forwards;
       }
     }
+  }
+}
+
+@keyframes increaseHeightActive {
+  0% {
+    height: rem(8);
+  }
+  100% {
+    height: rem(35);
+  }
+}
+
+@keyframes increaseHeight {
+  0% {
+    height: rem(8);
+  }
+  100% {
+    height: rem(32);
+  }
+}
+
+@keyframes dotUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes dotShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dotHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dotRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes dotLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes dotDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
   }
 }

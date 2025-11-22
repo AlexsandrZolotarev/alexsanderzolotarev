@@ -78,9 +78,17 @@ const Header = () => {
               onClick={isActiveOnChange}
               aria-controls="main-nav"
             >
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
               <span className="burger-button__line"></span>
               <span className="burger-button__line"></span>
-              <span className="burger-button__line"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
+              <span className="burger-button__dot"></span>
             </button>
           </div>
         </div>
