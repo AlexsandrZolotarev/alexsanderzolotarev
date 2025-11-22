@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { store } from './Redux/store';
 import ProjectPage from './pages/ProjectPage/ProjectPage';
 import ContactPage from './pages/ContactPage/ContactPage';
+import AboutPage from './pages/AboutPage/AboutPage';
 
 const DELAY: number = 3000;
 
@@ -35,8 +36,10 @@ const App = () => {
                   <Route element={<Layout />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/about" element={<AboutPage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
                     <Route path="/projects/:projectId" element={<ProjectPage />} />
+
                     <Route path="*" element={<ErrorPage />} />
                   </Route>
                 </Routes>

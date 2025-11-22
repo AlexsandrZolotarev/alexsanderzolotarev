@@ -1,0 +1,110 @@
+@use '../../helpers/' as *;
+.about {
+  display: flex;
+  padding-top: 0;
+  @include tablet {
+    flex-direction: column-reverse;
+  }
+  @include mobile {
+    padding-inline: rem(24);
+    padding-top: rem(150);
+  }
+
+  &__body {
+    width: 75%;
+    padding: rem(150) rem(40) 0 rem(100);
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+    @include tablet {
+      width: 100%;
+      padding: rem(24);
+    }
+    @include mobile {
+      padding: 0;
+    }
+  }
+  &__title {
+    border-bottom: var(--border);
+    padding-bottom: rem(30);
+    border-bottom: var(--border);
+    padding-bottom: rem(30);
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: var(--font-family-variable);
+    font-variation-settings:
+      'wght' 800,
+      'wdth' 125;
+    @include fluid-text(40, 20);
+    @include tablet {
+      margin-top: rem(40);
+    }
+  }
+
+  &__description {
+    padding-block: rem(30);
+    @include fluid-text(20, 20);
+  }
+  &__list {
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+  }
+  &__inner {
+    width: 25%;
+    position: relative;
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+    @include tablet {
+      padding: rem(50);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    @include mobile {
+      padding: 0;
+    }
+  }
+  &__avatar {
+    position: relative;
+    overflow-y: hidden;
+    padding-top: 177.7777777778%;
+    border-radius: 0px 0px 0px 24px;
+    @include tablet {
+      padding-top: rem(120);
+    }
+    @include mobile {
+      padding-top: rem(0);
+    }
+    img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      color: transparent;
+      transform: scaleX(-1);
+      object-fit: cover;
+      @include tablet {
+        position: relative;
+        border-radius: 24px;
+      }
+    }
+  }
+
+  &__link {
+    @include fluid-text(20, 18);
+    @include tablet {
+      padding-bottom: rem(30);
+    }
+  }
+}

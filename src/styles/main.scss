@@ -15,6 +15,7 @@
 @use './blocks/lights';
 @use './blocks/baseline';
 @use './blocks/logo';
+@use './blocks/scroll-about';
 
 @use './blocks/Skills/tabs';
 @use './blocks/Skills/list';
@@ -31,3 +32,5 @@
 @use './blocks/Pages/ErrorPage/errorPage';
 
 @use './blocks/Contact/contact';
+
+@use './blocks/About/about';
