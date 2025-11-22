@@ -3,7 +3,6 @@
 .projects {
   &__body {
     height: 100%;
-    padding-top: rem(150);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: rem(40);
@@ -11,7 +10,6 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-top: rem(120);
     }
   }
   &__works {

@@ -1,0 +1,68 @@
+@use '../../helpers/' as *;
+.contact {
+  &__body {
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+    padding-inline: rem(100);
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+    @include tablet {
+      padding-top: rem(150);
+      padding-inline: rem(0);
+    }
+  }
+
+  &__title {
+    border-bottom: var(--border);
+    padding-bottom: rem(30);
+    @include fluid-text(40, 20);
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: var(--font-family-variable);
+    font-variation-settings:
+      'wght' 800,
+      'wdth' 125;
+  }
+
+  &__list {
+    padding-top: rem(30);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: rem(30);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    gap: rem(15);
+  }
+
+  &__label {
+    font-weight: bolder;
+  }
+
+  &__link {
+    display: flex;
+    text-transform: lowercase;
+  }
+
+  &__sublist {
+    text-transform: lowercase;
+  }
+
+  &__subitem {
+  }
+}

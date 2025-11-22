@@ -6,7 +6,6 @@
   --color-black-50: #252532;
   --color-svg: #606887;
   --color-text: #606887;
-  --border: #{rem(1)} solid;
   --border-gray: #{rem(1)} solid;
   --border-image: linear-gradient(to right, #0cbaf1 0%, #e95ce9 100%) 1;
   --color-gray-1: #b0b0b2;
@@ -29,6 +28,7 @@
   --linear: linear-gradient(90deg, #0cbaf1, #e95ce9);
   --bg-select: #ca6aeb;
   --color-select: #000000;
+  --border: 2px solid var(--color-text);
 }
 [data-theme='dark'] {
   --bg-select: #999999;

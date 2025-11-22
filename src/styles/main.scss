@@ -7,9 +7,6 @@
 @use './blocks/Header/header';
 @use './blocks/Header/burgerButton';
 
-@use './blocks/Footer/footer';
-@use './blocks/Footer/soc1als';
-
 @use './blocks/Hero/hero';
 
 @use './blocks/section';
@@ -32,3 +29,5 @@
 @use './blocks/CursorFollower/CursorFollower';
 
 @use './blocks/Pages/ErrorPage/errorPage';
+
+@use './blocks/Contact/contact';

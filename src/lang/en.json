@@ -63,5 +63,10 @@
   "project.celestia.title": "Celestia",
   "project.celestia.category": "Frontend",
   "project.celestia.year": "2024",
-  "project.celestia.description": "A cosmic-themed landing with neon gradients and deep space atmosphere. The layout is built with SCSS and adaptive typography. The page uses glowing gradients, starry backgrounds, and smooth animated transitions between sections to create a futuristic space mood."
+  "project.celestia.description": "A cosmic-themed landing with neon gradients and deep space atmosphere. The layout is built with SCSS and adaptive typography. The page uses glowing gradients, starry backgrounds, and smooth animated transitions between sections to create a futuristic space mood.",
+  "contact.title": "Contact",
+  "contact.mail.label": "Mail",
+  "contact.mail.value": "masterblacksmith@mail.ru",
+  "contact.social.label": "Social media",
+  "contact.social.telegram": "Telegram"
 }
