@@ -4,6 +4,7 @@ import { PROJECTS } from '@/data/projects';
 import { useLang } from '@/hooks/useLang';
 import { useAppReady } from '@/hooks/useAppReady';
 import { useAppSelector } from '@/Redux/hooks';
+import { ProjectGallery } from './ProjectGallery';
 
 function ProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
@@ -17,11 +18,13 @@ function ProjectPage() {
 
   const nextIndex = (projectIndex + 1) % PROJECTS.length;
   const nextProjectId = PROJECTS[nextIndex]!.id;
-
+  const link = project.link ?? '';
   const title = translate(`project.${project.id}.title`);
+  const linkTitle = translate(`project.link`);
   const year = translate(`project.${project.id}.year`);
   const category = translate(`project.${project.id}.category`);
   const description = translate(`project.${project.id}.description`);
+
   return (
     <section className="project" aria-labelledby="project-title" id="Project">
       <div className="project__inner ">
@@ -38,6 +41,17 @@ function ProjectPage() {
         >
           <div className="project__title" style={{ color: project.color }}>
             <h1>{title}</h1>
+            {link && (
+              <a
+                className="project__title-link"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="External site (opens in new tab)"
+              >
+                {linkTitle}
+              </a>
+            )}
           </div>
           <div
             className={`project__intro ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
@@ -63,10 +77,15 @@ function ProjectPage() {
               </table>
             </div>
             <div className="project__description">
-              <p>{description}</p>
+              <p className="project__description-text">{description}</p>
             </div>
           </div>
         </div>
+        {!!project.images?.length && (
+          <div className="project__images">
+            <ProjectGallery images={project.images} />
+          </div>
+        )}
         <div
           className={`project__footer ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
         >

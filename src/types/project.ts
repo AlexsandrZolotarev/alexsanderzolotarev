@@ -4,11 +4,18 @@ export type ProjectId =
   | 'future-tech'
   | 'four-horses-club'
   | 'hydra'
-  | 'celestia';
+  | 'celestia'
+  | 'Generator Polygons'
+  | 'Kaskad Davtian'
+  | 'Modular Buildings'
+  | 'Aiscreen'
+  | 'Blossom';
 
 export type Project = {
   id: ProjectId;
   image: string;
   color: string;
   title: string;
+  link: string;
+  images?: string[];
 };
