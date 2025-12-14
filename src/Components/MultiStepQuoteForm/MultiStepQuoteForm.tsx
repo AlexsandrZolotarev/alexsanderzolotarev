@@ -82,18 +82,31 @@ export function MultiStepQuoteForm() {
     try {
       setLoading(true);
 
-      const payload = {
-        ...data,
-        files: data.files.map((f) => ({ name: f.name, size: f.size, type: f.type })),
-        url: window.location.href,
-        ua: navigator.userAgent,
-        createdAt: new Date().toISOString(),
-      };
+      const form = new FormData();
+
+      form.append(
+        'data',
+        JSON.stringify({
+          services: data.services,
+          pages: data.pages,
+          deadline: data.deadline,
+          hasTz: data.hasTz,
+          name: data.name,
+          contact: data.contact,
+          message: data.message,
+          url: window.location.href,
+          ua: navigator.userAgent,
+          createdAt: new Date().toISOString(),
+        }),
+      );
+
+      data.files.forEach((file) => {
+        form.append('files', file);
+      });
 
       const res = await fetch('/api/lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: form, // ⬅️ ВАЖНО: без headers
       });
 
       if (!res.ok) throw new Error('Send failed');
