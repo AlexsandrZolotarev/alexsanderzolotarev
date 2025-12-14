@@ -122,7 +122,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     for (const f of parsedFiles) {
       try {
         fs.unlinkSync(f.filepath);
-      } catch {
+      } catch (err) {
         console.warn('Failed to cleanup temp file', f.filepath, err);
       }
     }
