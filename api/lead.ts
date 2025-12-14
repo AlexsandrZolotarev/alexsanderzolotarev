@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import formidable, { File as FormidableFile } from 'formidable';
-import fs from 'node:fs';
+import * as fs from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import FormData from 'form-data';
 import { fileTypeFromFile } from 'file-type';
 
 export const config = { api: { bodyParser: false } };
@@ -12,7 +12,12 @@ const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp', 'applicat
 const ALLOWED_EXT = new Set(['jpg', 'jpeg', 'png', 'webp', 'pdf', 'doc', 'docx']);
 const MAX_FILES = 8;
 const MAX_FILE_SIZE = 15 * 1024 * 1024;
-
+type TgError = { description?: string };
+function getTgDescription(payload: unknown): string | undefined {
+  if (!payload || typeof payload !== 'object') return undefined;
+  const p = payload as TgError;
+  return typeof p.description === 'string' ? p.description : undefined;
+}
 function getExt(name: string) {
   return name.split('.').pop()?.toLowerCase() ?? '';
 }
@@ -27,20 +32,22 @@ async function sendTelegramDocument(
   filePath: string,
   filename: string,
 ) {
+  const buf = await readFile(filePath);
+
   const tgForm = new FormData();
   tgForm.append('chat_id', chatId);
-  tgForm.append('document', fs.createReadStream(filePath), { filename });
+  tgForm.append('document', new Blob([buf]), filename);
 
   const resp = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
     method: 'POST',
-    body: tgForm as unknown as BodyInit,
-    headers: tgForm.getHeaders(),
+    body: tgForm,
   });
 
   const json = await resp.json().catch(() => null);
 
   if (!resp.ok) {
-    const msg = json?.description ? `${json.description}` : `HTTP ${resp.status}`;
+    const desc = getTgDescription(json);
+    const msg = desc ?? `HTTP ${resp.status}`;
     throw new Error(`sendDocument failed: ${msg}`);
   }
 }
