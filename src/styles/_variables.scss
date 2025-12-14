@@ -2,10 +2,15 @@
 
 :root {
   --bg-color: #f3f2f9;
+  --bg-color-toast: #18181b;
+  --btn-color-toast: transparent;
+  --fileBtn-color: rgba(0, 0, 0, 0.06);
+
   --color-light: white;
   --color-black-50: #252532;
   --color-svg: #606887;
   --color-text: #606887;
+  --color-text-toast: #ffffff;
   --border-gray: #{rem(1)} solid;
   --border-image: linear-gradient(to right, #0cbaf1 0%, #e95ce9 100%) 1;
   --color-gray-1: #b0b0b2;
@@ -29,11 +34,17 @@
   --bg-select: #ca6aeb;
   --color-select: #000000;
   --border: 2px solid var(--color-text);
+  --sonner-toast-radius: #{rem(18)};
+  --sonner-toast-shadow: 0 #{rem(18)} #{rem(40)} rgba(0, 0, 0, 0.35);
 }
 [data-theme='dark'] {
+  --fileBtn-color: rgba(255, 255, 255, 0.06);
+  --btn-color-toast: #cfcdcd;
+  --bg-color-toast: #f3f2f9;
   --bg-select: #999999;
   --color-select: white;
   --bg-color: #18181b;
   --color-text: #ffffff;
   --color-svg: #ffffff;
+  --color-text-toast: #000000;
 }

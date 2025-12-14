@@ -1,3 +1,4 @@
+import { MultiStepQuoteForm } from '@/Components/MultiStepQuoteForm/MultiStepQuoteForm';
 import { useAppReady } from '@/hooks/useAppReady';
 import { useLang } from '@/hooks/useLang';
 import { useAppSelector } from '@/Redux/hooks';
@@ -46,6 +47,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
+      <MultiStepQuoteForm />
     </section>
   );
 }

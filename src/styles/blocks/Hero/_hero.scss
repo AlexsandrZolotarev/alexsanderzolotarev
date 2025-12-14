@@ -47,15 +47,24 @@
     &.is-active {
       animation: var(--animation-upFade);
     }
+    @include mobile {
+      margin-block: rem(20);
+    }
   }
 
   &__actions {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: rem(20);
     gap: 1.5rem;
     @include anim-sd;
     animation-duration: 1.3s;
+    & > :nth-child(3) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
     @include mobile {
+      display: flex;
       flex-direction: column;
     }
     &.is-active {
@@ -78,12 +87,6 @@
   &__callme {
     @include anim-sd;
     animation-duration: 1.2s;
-    @include mobile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
     &.is-active {
       animation: var(--animation-upFade);
     }

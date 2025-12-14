@@ -29,7 +29,7 @@
   "hero.subtitle": "Я фронтенд-разработчик",
   "hero.links.projects": "→ смотреть мои проекты",
   "hero.links.about": "→ подробнее обо мне",
-
+  "hero.links.buy": "→ заказать проект",
   "footer.designed": "Дизайн и разработка — Александр © 2025",
 
   "project.label.category": "КАТЕГОРИЯ",
@@ -98,5 +98,62 @@
   "about.resume": "Резюме",
 
   "about.description": "Привет! Меня зовут Александр, и я — фронтенд-разработчик, который обожает дизайн, интерфейсы и современный веб. Я создаю адаптивные сайты, сложные UI-анимации, структурированный код и современные полноценные проекты. Я увлечён новыми технологиями, чистой архитектурой и постоянно изучаю инструменты, которые помогают улучшать качество разработки и пользовательского опыта.",
-  "error.link": "→ на главную"
+  "error.link": "→ на главную",
+  "project.toast.title": "Есть идея?",
+  "project.toast.description": "Нужна доработка или новый сайт?\nДавай оформим задачу — отвечу в течение 5 минут.",
+  "project.action.label": "Заказать работу",
+  "quote.title": "Рассчитать проект",
+  "quote.subtitle": "Обычно отвечаю в течение 5–30 минут.",
+  "quote.clear": "Очистить",
+
+  "quote.steps.service": "1. Услуга",
+  "quote.steps.contacts": "2. Контакты",
+  "quote.steps.details": "3. Детали",
+
+  "quote.step1.title": "Что нужно сделать?",
+  "quote.step1.hint": "Выберите один или несколько вариантов",
+
+  "quote.step1.services.landing": "Лендинг / промо",
+  "quote.step1.services.corporate": "Корпоративный сайт",
+  "quote.step1.services.ecommerce": "Интернет-магазин",
+  "quote.step1.services.support": "Доработки / исправления",
+
+  "quote.step1.pages.label": "Сколько страниц?",
+  "quote.step1.pages.1-3": "1–3",
+  "quote.step1.pages.4-7": "4–7",
+  "quote.step1.pages.8+": "8+",
+
+  "quote.step1.deadline.label": "Сроки",
+  "quote.step1.deadline.asap": "Срочно",
+  "quote.step1.deadline.1-2w": "1–2 недели",
+  "quote.step1.deadline.not_urgent": "Не горит",
+
+  "quote.step2.title": "Как с вами связаться?",
+  "quote.step2.hint": "Telegram @username / email / телефон",
+  "quote.step2.name.label": "Имя",
+  "quote.step2.name.ph": "Например, Андрей",
+  "quote.step2.contact.label": "Контакт",
+  "quote.step2.contact.ph": "@telegram или email",
+  "quote.step2.tz.label": "Есть ТЗ/макет?",
+  "quote.step2.tz.yes": "Да",
+  "quote.step2.tz.no": "Нет",
+
+  "quote.step3.title": "Детали (необязательно)",
+  "quote.step3.hint": "Ссылки, примеры, комментарии",
+  "quote.step3.message.label": "Комментарий",
+  "quote.step3.message.ph": "Например: нужен сайт как...; есть референсы; важны сроки...",
+  "quote.step3.files.hint": "Пока отправим файлы как список имён (настоящую загрузку добавим позже).",
+
+  "quote.buttons.prev": "Назад",
+  "quote.buttons.next": "Далее",
+  "quote.buttons.send": "Отправить",
+  "quote.buttons.sending": "Отправка…",
+
+  "quote.toast.successTitle": "Готово ✅",
+  "quote.toast.successDesc": "Спасибо! Скоро свяжусь с вами.",
+  "quote.toast.errorTitle": "Ошибка ❌",
+  "quote.toast.errorDesc": "Не удалось отправить заявку. Попробуйте ещё раз.",
+  "quote.files.choose": "Выбрать файлы",
+  "quote.files.count": "Число файлов: {n}",
+  "quote.files.remove": "Удалить"
 }

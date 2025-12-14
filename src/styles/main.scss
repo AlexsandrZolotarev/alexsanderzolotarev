@@ -3,7 +3,7 @@
 @use './variables';
 @use './utils';
 @use './globals';
-
+@use './sonner';
 @use './blocks/Header/header';
 @use './blocks/Header/burgerButton';
 
@@ -34,3 +34,5 @@
 @use './blocks/Contact/contact';
 
 @use './blocks/About/about';
+
+@use './blocks/MultiStepQuoteForm/MultiStepQuoteForm.scss';

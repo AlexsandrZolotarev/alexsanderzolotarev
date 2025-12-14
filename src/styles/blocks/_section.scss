@@ -1,9 +1,5 @@
 @use '../helpers' as *;
 
 section {
-  padding-top: rem(150);
   height: 100%;
-  @include tablet {
-    padding-top: rem(120);
-  }
 }

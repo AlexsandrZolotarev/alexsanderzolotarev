@@ -1,5 +1,8 @@
 @use '../../helpers/' as *;
 .contact {
+  @include tablet {
+    padding-top: rem(50);
+  }
   &__body {
     @include anim-sd;
     animation-duration: 1s;
@@ -9,7 +12,7 @@
       animation: var(--animation-upFade);
     }
     @include tablet {
-      padding-top: rem(150);
+      padding-top: rem(50);
       padding-inline: rem(0);
     }
   }
@@ -55,6 +58,7 @@
   }
 
   &__link {
+    @include fluid-text(18, 14);
     display: flex;
     text-transform: lowercase;
   }

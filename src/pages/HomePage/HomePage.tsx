@@ -51,6 +51,13 @@ const HomePage = () => {
                 </NavLink>
               </h5>
             </li>
+            <li className="hero__item">
+              <h5>
+                <NavLink to="/contacts" className="hero__link">
+                  {translate('hero.links.buy')}
+                </NavLink>
+              </h5>
+            </li>
           </ul>
         </div>
       </div>

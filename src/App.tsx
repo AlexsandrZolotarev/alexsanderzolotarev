@@ -11,6 +11,8 @@ import { store } from './Redux/store';
 import ProjectPage from './pages/ProjectPage/ProjectPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import AboutPage from './pages/AboutPage/AboutPage';
+import { AppToast } from './Widgets/AppToast';
+import { Toaster } from 'sonner';
 
 const DELAY: number = 3000;
 
@@ -44,6 +46,8 @@ const App = () => {
                   </Route>
                 </Routes>
               </Suspense>
+              <Toaster position="bottom-right" richColors closeButton duration={5000} />
+              <AppToast />
             </AppReadyProvider>
           </ThemeProvider>
         </LangProvider>

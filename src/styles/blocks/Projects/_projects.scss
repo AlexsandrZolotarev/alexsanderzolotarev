@@ -46,7 +46,7 @@
   }
   &__list {
     display: grid;
-    height: rem(700);
+    height: rem(660);
     overflow-y: auto;
     overflow-x: hidden;
     &[data-state='enter'] .projects__item {
