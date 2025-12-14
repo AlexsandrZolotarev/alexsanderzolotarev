@@ -1,7 +1,7 @@
 @use '../../helpers/' as *;
 
 .header {
-  position: relative;
+  position: fixed;
   width: 100%;
   font-size: rem(16);
   z-index: 100;

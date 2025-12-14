@@ -1,9 +1,13 @@
 @use 'helpers' as *;
 [data-sonner-toaster='true'] {
   font-family: var(--font-family-base);
+  position: fixed !important;
+  right: rem(24);
+  bottom: rem(24);
+  z-index: 5;
+  margin-top: 0 !important;
 }
 
-/* сам тост */
 [data-sonner-toast] {
   background: rgba(255, 255, 255, 0.92);
   color: var(--color-black-50);

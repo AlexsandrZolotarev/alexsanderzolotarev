@@ -53,7 +53,7 @@ const HomePage = () => {
             </li>
             <li className="hero__item">
               <h5>
-                <NavLink to="/contacts" className="hero__link">
+                <NavLink to="/contact" className="hero__link">
                   {translate('hero.links.buy')}
                 </NavLink>
               </h5>

@@ -1,5 +1,9 @@
 @use '../../helpers/' as *;
 .contact {
+  padding-top: rem(150);
+  @include mobile {
+    margin-top: rem(50);
+  }
   @include tablet {
     padding-top: rem(50);
   }

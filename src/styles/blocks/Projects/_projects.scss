@@ -1,6 +1,11 @@
 @use '../../helpers/' as *;
 
 .projects {
+  margin-top: 0;
+  padding-top: rem(150);
+  @include mobile {
+    margin-top: rem(50);
+  }
   &__body {
     height: 100%;
     display: grid;
@@ -24,7 +29,7 @@
       justify-content: space-between;
       align-items: center;
       margin: 0;
-      border-bottom: var(--border);
+
       border-width: 2px;
       border-image: var(--border-image);
 
@@ -76,6 +81,9 @@
       transition: transform 0.3s ease;
       margin: 0;
       @include fluid-text(30, 16);
+    }
+    &:first-child {
+      border-top: var(--border);
     }
     &-arrow {
       padding-right: 0.5em;

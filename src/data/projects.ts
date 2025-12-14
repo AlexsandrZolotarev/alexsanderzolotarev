@@ -7,8 +7,8 @@ import Hydra from '@/images/Projects/HYDRA.webp';
 import Celestia from '@/images/Projects/Celestia.webp';
 import Blossom from '@/images/Projects/Blossom.webp';
 import AiScreen from '@/images/Projects/AiScreen.webp';
-import Kaskad from '@/images/Projects/Kascad.webp';
-import GeneratePolygons from '@/images/Projects/GeneratePolygons.webp';
+import Kaskad from '@/images/Projects/kaskad.webp';
+import GeneratePolygons from '@/images/Projects/GeneratorPolygons.webp';
 import ModularBuildings from '@/images/Projects/ModularBuildings.webp';
 function projectImages(project: string, count: number) {
   return Array.from(

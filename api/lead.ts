@@ -1,111 +1,130 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import formidable, { type Fields, type Files, type File as FormidableFile } from 'formidable';
-import fs from 'fs';
+import formidable, { File as FormidableFile } from 'formidable';
+import fs from 'node:fs';
+import path from 'node:path';
 import FormData from 'form-data';
+import { fileTypeFromFile } from 'file-type';
 
-export const config = {
-  api: { bodyParser: false },
-};
+export const config = { api: { bodyParser: false } };
 
-function firstField(fields: Fields, name: string): string {
-  const v = fields[name];
-  if (!v) throw new Error(`Missing field: ${name}`);
-  return Array.isArray(v) ? String(v[0]) : String(v);
+const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp', 'application/pdf']);
+
+const ALLOWED_EXT = new Set(['jpg', 'jpeg', 'png', 'webp', 'pdf', 'doc', 'docx']);
+const MAX_FILES = 8;
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+
+function getExt(name: string) {
+  return name.split('.').pop()?.toLowerCase() ?? '';
 }
 
-function fileArray(files: Files, name: string): FormidableFile[] {
-  const v = files[name];
-  if (!v) return [];
-  return Array.isArray(v) ? v : [v];
+function isProbablyDoc(ext: string) {
+  return ext === 'doc' || ext === 'docx';
 }
 
-type LeadPayload = {
-  services?: string[];
-  pages?: string;
-  deadline?: string;
-  hasTz?: string;
-  name?: string;
-  contact?: string;
-  message?: string;
-  url?: string;
-  ua?: string;
-  createdAt?: string;
-};
+async function sendTelegramDocument(
+  token: string,
+  chatId: string,
+  filePath: string,
+  filename: string,
+) {
+  const tgForm = new FormData();
+  tgForm.append('chat_id', chatId);
+  tgForm.append('document', fs.createReadStream(filePath), { filename });
+
+  const resp = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
+    method: 'POST',
+    body: tgForm as unknown as BodyInit,
+    headers: tgForm.getHeaders(),
+  });
+
+  const json = await resp.json().catch(() => null);
+
+  if (!resp.ok) {
+    const msg = json?.description ? `${json.description}` : `HTTP ${resp.status}`;
+    throw new Error(`sendDocument failed: ${msg}`);
+  }
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    res.status(405).json({ error: 'Method Not Allowed' });
-    return;
-  }
+  if (req.method !== 'POST')
+    return res.status(405).json({ ok: false, error: 'Method not allowed' });
 
   const token = process.env.TG_BOT_TOKEN;
   const chatId = process.env.TG_CHAT_ID;
 
-  if (!token || !chatId) {
-    res.status(500).json({ error: 'Missing TG_BOT_TOKEN or TG_CHAT_ID' });
-    return;
-  }
+  if (!token || !chatId)
+    return res.status(500).json({ ok: false, error: 'Missing env TG_BOT_TOKEN/TG_CHAT_ID' });
+
+  const form = formidable({
+    multiples: true,
+    maxFiles: MAX_FILES,
+    maxFileSize: MAX_FILE_SIZE,
+    keepExtensions: true,
+  });
+
+  let parsedFiles: FormidableFile[] = [];
 
   try {
-    const form = formidable({
-      multiples: true,
-      keepExtensions: true,
-      maxFileSize: 25 * 1024 * 1024,
-    });
-
     const [fields, files] = await form.parse(req);
 
-    const dataStr = firstField(fields, 'data');
-    const data = JSON.parse(dataStr) as LeadPayload;
+    const raw = fields.data;
+    const dataStr = Array.isArray(raw) ? raw[0] : raw;
 
-    const msgRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    if (!dataStr) return res.status(400).json({ ok: false, error: 'No data field' });
+
+    const data = JSON.parse(dataStr);
+
+    const msgResp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: chatId,
         text:
           `🧾 New lead\n\n` +
-          `👤 ${data.name ?? '—'}\n` +
-          `📩 ${data.contact ?? '—'}\n\n` +
-          `${data.message ?? ''}`,
+          `👤 ${data.name ?? '-'}\n` +
+          `📩 ${data.contact ?? '-'}\n\n` +
+          `${data.message ?? ''}\n\n` +
+          `🌐 ${data.url ?? ''}`,
       }),
     });
 
-    if (!msgRes.ok) {
-      const t = await msgRes.text();
-      throw new Error(`sendMessage failed: ${msgRes.status} ${t}`);
+    if (!msgResp.ok) {
+      const j = await msgResp.json().catch(() => null);
+      throw new Error(`sendMessage failed: ${j?.description ?? `HTTP ${msgResp.status}`}`);
+    }
+    const incoming = files.files;
+    const uploaded = Array.isArray(incoming) ? incoming : incoming ? [incoming] : [];
+    parsedFiles = uploaded;
+
+    for (const f of uploaded) {
+      const filepath = f.filepath;
+      const original = f.originalFilename ?? path.basename(filepath);
+      const ext = getExt(original);
+
+      if (!ALLOWED_EXT.has(ext)) {
+        throw new Error(`File type not allowed: ${original}`);
+      }
+      if (!isProbablyDoc(ext)) {
+        const ft = await fileTypeFromFile(filepath);
+        if (!ft || !ALLOWED_MIME.has(ft.mime)) {
+          throw new Error(`Bad file signature: ${original}`);
+        }
+      }
+
+      await sendTelegramDocument(token, chatId, filepath, original);
     }
 
-    const uploaded = fileArray(files, 'files');
-
-    for (const file of uploaded) {
-      if (!file.filepath) continue;
-
-      const tgForm = new FormData();
-      tgForm.append('chat_id', chatId);
-
-      tgForm.append('document', fs.createReadStream(file.filepath), {
-        filename: file.originalFilename ?? 'file',
-        contentType: file.mimetype ?? 'application/octet-stream',
-        knownLength: file.size,
-      });
-
-      const docRes = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
-        method: 'POST',
-        body: tgForm,
-        headers: tgForm.getHeaders(),
-      });
-
-      if (!docRes.ok) {
-        const t = await docRes.text();
-        throw new Error(`sendDocument failed: ${docRes.status} ${t}`);
+    return res.status(200).json({ ok: true });
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : 'Unknown error';
+    return res.status(500).json({ ok: false, error: msg });
+  } finally {
+    for (const f of parsedFiles) {
+      try {
+        fs.unlinkSync(f.filepath);
+      } catch {
+        console.warn('Failed to cleanup temp file', f.filepath, err);
       }
     }
-
-    res.status(200).json({ ok: true });
-  } catch (e) {
-    const message = e instanceof Error ? e.message : 'Unknown error';
-    res.status(500).json({ ok: false, error: message });
   }
 }

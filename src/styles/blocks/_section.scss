@@ -2,4 +2,8 @@
 
 section {
   height: 100%;
+
+  &[aria-label='Notifications alt+T'] {
+    position: absolute;
+  }
 }
