@@ -5,11 +5,11 @@ export type ProjectId =
   | 'four-horses-club'
   | 'hydra'
   | 'celestia'
-  | 'Generator Polygons'
-  | 'Kaskad Davtian'
-  | 'Modular Buildings'
-  | 'Aiscreen'
-  | 'Blossom';
+  | 'generator-polygons'
+  | 'kaskad-davtian'
+  | 'modular-buildings'
+  | 'aiscreen'
+  | 'blossom';
 
 export type Project = {
   id: ProjectId;

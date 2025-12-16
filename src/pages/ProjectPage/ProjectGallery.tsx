@@ -2,11 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Zoom } from 'swiper/modules';
 import type { Swiper as SwiperInstance } from 'swiper/types';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/zoom';
-
 type Props = {
   images: string[];
   title?: string;
@@ -16,11 +14,7 @@ type Props = {
 export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
   const [fullscreen, setFullscreen] = useState(false);
   const swiperRef = useRef<SwiperInstance | null>(null);
-
-  // чтобы Swiper корректно пересоздавался при fullscreen
   const swiperKey = useMemo(() => (fullscreen ? 'fullscreen' : 'inline'), [fullscreen]);
-
-  // 🔹 Управление клавиатурой
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (!swiperRef.current) return;
@@ -45,8 +39,6 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
-
-  // 🔹 Блокируем скролл страницы в fullscreen
   useEffect(() => {
     if (!fullscreen) return;
 
@@ -70,7 +62,6 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
         height: fullscreen ? '100vh' : 520,
       }}
     >
-      {/* overlay — клик закрывает fullscreen */}
       {fullscreen && (
         <div
           onClick={() => setFullscreen(false)}
@@ -90,7 +81,6 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
           height: '100%',
         }}
       >
-        {/* Заголовок в fullscreen */}
         {fullscreen && title && (
           <div
             style={{

@@ -1,19 +1,24 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import { PROJECTS } from '@/data/projects';
 import { useLang } from '@/hooks/useLang';
 import { useAppReady } from '@/hooks/useAppReady';
 import { useAppSelector } from '@/Redux/hooks';
 import { ProjectGallery } from './ProjectGallery';
+import { useEffect } from 'react';
 
 function ProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
   const { translate } = useLang();
   const projectIndex = PROJECTS.findIndex((p) => p.id === projectId);
   const project = PROJECTS[projectIndex];
-
+  const { pathname } = useLocation();
   const isTextVisible = useAppSelector((state) => state.visibilitySlice.isTextVisible);
   const { appReady } = useAppReady();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
   if (!project) return <ErrorPage />;
 
   const nextIndex = (projectIndex + 1) % PROJECTS.length;
@@ -82,7 +87,9 @@ function ProjectPage() {
           </div>
         </div>
         {!!project.images?.length && (
-          <div className="project__images">
+          <div
+            className={`project__images ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
+          >
             <ProjectGallery images={project.images} />
           </div>
         )}

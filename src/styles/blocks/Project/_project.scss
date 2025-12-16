@@ -103,7 +103,7 @@
     grid-template-columns: 50% 50%;
     gap: rem(20);
     margin-top: rem(30);
-    @include mobile {
+    @include tablet {
       grid-template-columns: 1fr;
     }
   }
@@ -138,6 +138,12 @@
     margin-top: rem(50);
     padding-top: rem(50);
     border-top: var(--border);
+    @include anim-sd;
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+    &.is-active {
+      animation: var(--animation-upFade);
+    }
   }
   &__footer {
     text-transform: uppercase;
@@ -161,6 +167,7 @@
     align-items: center;
     margin-block: rem(80);
     padding-block: rem(25);
+    margin-bottom: rem(12);
     justify-content: space-between;
     border-top: var(--border);
     text-transform: uppercase;
