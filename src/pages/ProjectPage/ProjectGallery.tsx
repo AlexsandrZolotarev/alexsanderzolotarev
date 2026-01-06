@@ -1,20 +1,20 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Zoom } from 'swiper/modules';
 import type { Swiper as SwiperInstance } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/zoom';
+import { createPortal } from 'react-dom';
 type Props = {
   images: string[];
   title?: string;
   startIndex?: number;
 };
 
-export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
+export function ProjectGallery({ images, startIndex = 0 }: Props) {
   const [fullscreen, setFullscreen] = useState(false);
   const swiperRef = useRef<SwiperInstance | null>(null);
-  const swiperKey = useMemo(() => (fullscreen ? 'fullscreen' : 'inline'), [fullscreen]);
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (!swiperRef.current) return;
@@ -51,7 +51,7 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
 
   if (!images?.length) return null;
 
-  return (
+  const gallery = (
     <div
       style={{
         position: fullscreen ? 'fixed' : 'relative',
@@ -59,48 +59,20 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
         zIndex: fullscreen ? 9999 : 'auto',
         background: fullscreen ? '#000' : 'transparent',
         width: '100%',
-        height: fullscreen ? '100vh' : 520,
       }}
+      className="project__gallary"
     >
       {fullscreen && (
         <div
           onClick={() => setFullscreen(false)}
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: '#000',
-          }}
+          style={{ position: 'absolute', inset: 0, background: '#000' }}
         />
       )}
 
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        {fullscreen && title && (
-          <div
-            style={{
-              position: 'absolute',
-              top: 16,
-              left: 16,
-              right: 16,
-              zIndex: 2,
-              color: '#fff',
-              fontSize: 16,
-              opacity: 0.9,
-              pointerEvents: 'none',
-            }}
-          >
-            {title}
-          </div>
-        )}
+      <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100%' }}>
+        {/* title ... */}
 
         <Swiper
-          key={swiperKey}
           modules={[Navigation, Zoom]}
           navigation
           zoom
@@ -114,7 +86,11 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
             <SwiperSlide key={src}>
               <div
                 className="swiper-zoom-container"
-                onDoubleClick={() => setFullscreen((v) => !v)}
+                onDoubleClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setFullscreen((v) => !v);
+                }}
                 style={{
                   width: '100%',
                   height: '100%',
@@ -132,7 +108,6 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
                     maxHeight: '100%',
                     objectFit: 'contain',
                     userSelect: 'none',
-                    display: 'block',
                   }}
                 />
               </div>
@@ -142,4 +117,6 @@ export function ProjectGallery({ images, title = '', startIndex = 0 }: Props) {
       </div>
     </div>
   );
+
+  return fullscreen ? createPortal(gallery, document.body) : gallery;
 }

@@ -1,0 +1,17 @@
+.hero.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.heroCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(0px);
+}

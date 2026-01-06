@@ -1,6 +1,7 @@
 import { useAppReady } from '@/hooks/useAppReady';
 import { useLang } from '@/hooks/useLang';
 import { useAppSelector } from '@/Redux/hooks';
+
 import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
