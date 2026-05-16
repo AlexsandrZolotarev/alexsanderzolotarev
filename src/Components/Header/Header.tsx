@@ -117,7 +117,7 @@ const Header = () => {
               </li>
               <li className={`header__overlay-item ${isTextVisible ? 'is-active' : 'is-lock'}`}>
                 <h2>
-                  <NavLink to="/Projects" className="header__overlay-link">
+                  <NavLink to="/projects" className="header__overlay-link">
                     {translate('header.burger.projects')}
                   </NavLink>
                 </h2>

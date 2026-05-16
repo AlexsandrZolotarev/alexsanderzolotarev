@@ -54,7 +54,7 @@ const ProjectsPage = () => {
                 onFocus={() => setActiveImageId(item.id)}
                 onBlur={() => setActiveImageId(null)}
               >
-                <NavLink to={`/Projects/${item.id}`} className="projects__item-inner">
+                <NavLink to={`/projects/${item.id}`} className="projects__item-inner">
                   <h3 className="projects__item-arrow">→</h3>
                   <h3 className="projects__item-text">{item.title}</h3>
                 </NavLink>

@@ -97,7 +97,7 @@ function ProjectPage() {
         <div
           className={`project__footer ${isTextVisible ? 'is-active' : 'is-lock'} ${appReady ? 'is-animate' : ''}`}
         >
-          <NavLink className="project__footer-link" to={`/Projects/${nextProjectId}`}>
+          <NavLink className="project__footer-link" to={`/projects/${nextProjectId}`}>
             <div className="project__footer-left">
               <h4>
                 <span className="project__footer-arrow">→</span>
