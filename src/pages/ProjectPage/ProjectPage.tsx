@@ -25,6 +25,7 @@ function ProjectPage() {
   const nextProjectId = PROJECTS[nextIndex]!.id;
   const link = project.link ?? '';
   const title = translate(`project.${project.id}.title`);
+  const nextProject = translate(`project.nextProject`);
   const linkTitle = translate(`project.link`);
   const year = translate(`project.${project.id}.year`);
   const category = translate(`project.${project.id}.category`);
@@ -100,7 +101,7 @@ function ProjectPage() {
             <div className="project__footer-left">
               <h4>
                 <span className="project__footer-arrow">→</span>
-                <span className="project__footer-text">next project</span>
+                <span className="project__footer-text">{nextProject}</span>
               </h4>
             </div>
 

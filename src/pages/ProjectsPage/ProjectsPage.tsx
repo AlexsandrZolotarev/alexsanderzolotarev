@@ -3,12 +3,16 @@ import { useAppSelector } from '@/Redux/hooks';
 import { NavLink } from 'react-router-dom';
 import { PROJECTS } from '@/data/projects';
 import { ProjectId } from '@/types/project';
+import { useLang } from '@/hooks/useLang';
 
 const ProjectsPage = () => {
   const isTextVisible = useAppSelector((s) => s.visibilitySlice.isTextVisible);
   const [activeImageId, setActiveImageId] = useState<ProjectId | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
+  const { translate } = useLang();
+
+  const title = translate(`projects.title`);
 
   useEffect(() => {
     if (headerRef.current)
@@ -34,7 +38,7 @@ const ProjectsPage = () => {
         <div className="projects__works">
           <header className="projects__works-header" ref={headerRef}>
             <h1 id="projects-title" className="projects__works-title">
-              WORK
+              {title}
             </h1>
             <div className="projects__works-counter">{PROJECTS.length}</div>
           </header>
