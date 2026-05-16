@@ -1,4 +1,5 @@
 export type ProjectId =
+  | 'infologistic24'
   | 'kaskad-davtian'
   | 'modular-buildings'
   | 'aiscreen'

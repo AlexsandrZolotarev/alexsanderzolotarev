@@ -37,6 +37,11 @@
   "project.nextProject": "NEXT PROJECT",
   "project.link": "→ View the website",
 
+  "project.infologistic24.title": "Infologistic 24",
+  "project.infologistic24.category": "Frontend",
+  "project.infologistic24.year": "2023",
+  "project.infologistic24.description": "Worked on new modules and features for the administrative panel of a logistics service using React and TypeScript.\nBuilt interactive components for tables, filters, search, sorting, pagination and operator workflows.\nAnalyzed existing projects and improved interface solutions based on business requirements and team feedback.\nContributed to codebase optimization, improving component readability and reusability.\nFixed defects in data rendering, validation and REST API interactions.\nMaintained code quality by following consistency principles, supporting code style and improving the frontend structure.\nWrote tests for key interface modules using Jest and React Testing Library.\nParticipated in code reviews, technical discussions, Scrum sprints, task planning and release preparation.\nWorked on safer client-side development: input validation, correct error handling and interface resilience for incorrect scenarios.\nHelped migrate individual modules and update components for new product requirements.\nOptimized tables and large data lists, reducing render time and interface load.\nDeveloped reusable filtering and search logic with debounce, reducing unnecessary server requests.\nContributed to analytical interfaces in the admin panel: tables, filters, search screens and overview pages.",
+
   "project.kaskad-davtian.title": "Kaskad & Davtian",
   "project.kaskad-davtian.category": "Frontend / CMS",
   "project.kaskad-davtian.year": "2025",
