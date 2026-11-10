@@ -7,14 +7,14 @@ const gallery = (folder: string, prefix: string, count: number) =>
   Array.from({ length: count }, (_, i) => `/images/Projects/${folder}/${prefix}${i + 1}.webp`);
 
 export const PROJECTS: Project[] = [
-  {
-    id: 'infologistic24',
-    image: cover('infologistic24.webp'),
-    images: gallery('infologistic24', 'infologistic24', 1),
-    color: '#f2e965',
-    title: 'Инфологистик 24',
-    link: 'https://www.infolog24.ru/',
-  },
+  // {
+  //   id: 'infologistic24',
+  //   image: cover('infologistic24.webp'),
+  //   images: gallery('infologistic24', 'infologistic24', 1),
+  //   color: '#f2e965',
+  //   title: 'Инфологистик 24',
+  //   link: 'https://www.infolog24.ru/',
+  // },
   {
     id: 'renda',
     image: cover('RENDA.webp'),
